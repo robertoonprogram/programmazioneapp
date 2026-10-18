@@ -42,6 +42,16 @@ git show e54672a0ceead4a3769f889bb9f113dbf14b9ea5:src/warehouse.mjs
 
 A Git SHA identifies a particular revision. It supports checking whether its contents have changed, **not** conclusively who authored it or whether that person independently created every component. The commit records observed for this checkpoint are attributed to `robertoonprogram` but **were not cryptographically signed**.
 
+## Public issue and cryptographic source evidence
+
+- [GitHub milestone issue #1](https://github.com/robertoonprogram/programmazioneapp/issues/1) was created under the repository account on **2026-10-18 at 11:40:24 UTC**. Its initial text links the historical commit SHAs and snapshot manifest. The issue is an additional public record, but GitHub issues can be edited and are not a legally qualified timestamp.
+- [Signed source attestation #57118347](https://github.com/robertoonprogram/programmazioneapp/attestations/57118347) was created on **2026-10-18** for commit `440e4d2a126727a72c5f5a04083dc88ffa0ece78`.
+- The source archive `liberapack-source-440e4d2a126727a72c5f5a04083dc88ffa0ece78.tar.gz` has **SHA-256 `c822f1e68dd2f483110b26066c96a306ea7f9e2b1209eb6318cfeb0c36953d67`**. A cryptographic signature on its attestation was recorded in [Sigstore's public transparency log, index 3310533139](https://search.sigstore.dev?logIndex=3310533139).
+- The [successful GitHub Actions run](https://github.com/robertoonprogram/programmazioneapp/actions/runs/39124317313) packages and attests that exact revision, with temporary downloadable archive and checksum.
+- Later revisions can also be attested automatically by the [source provenance workflow](../.github/workflows/attest-source.yml). See [verification instructions](ATTESTATION.md).
+
+**Interpretation:** the attestation ties a **specific source archive, its digest, and a GitHub Actions build identity** together, with a public log record. It does not certify who originally designed or wrote the code, and does not override any third-party rights.
+
 ## Contribution and source transparency
 
 - **Project ownership and coordination:** this repository is administered by the `robertoonprogram` account and records the user's LiberaPack project, requirements and development direction.
