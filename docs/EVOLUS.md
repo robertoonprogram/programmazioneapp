@@ -41,12 +41,21 @@ To document a real implementation, export or provide these **non-secret** items 
 
 The preliminary connection design names `EVOLUS_APPLICATION_ID`, `EVOLUS_AGENT_ID`, `EVOLUS_BASE_URL` and `EVOLUS_API_KEY`. Their values belong in environment configuration, never in GitHub. Verify the live API schema from the actual Evolus workspace before developing the adapter.
 
+## Reference chat adapter
+
+The repository includes [src/evolus-client.mjs](../src/evolus-client.mjs). It calls the documented OpenAI-compatible agent-chat endpoint `https://api.evolus.ai/v1/chat/completions`, using `<applicationId>:<agentId>` as the model and a server-side Bearer API key. The adapter removes direct customer details from the payload.
+
+To call it, configure the environment variables in `.env.example` privately and run `node examples/explain-with-larry.mjs`. Do not confuse its mocked automated tests with a successful live call. The workflow REST API requires separate integration and workspace authorization.
+
+Official event API overview: https://lablab.ai/ai-hackathons/amd-developer-hackathon-act-iii
+
 ## Verification status
 
 | Feature | Repository evidence |
 | --- | --- |
 | Offline warehouse demo | Present |
 | Deterministic packing example | Present in `src/` |
+| Larry agent chat adapter | Included (mock-tested); live keys and workspace required |
 | Larry agent configuration | Export required |
 | Evolus workflow definition | Export required |
 | AMD runtime evidence | Export/screenshot required |
