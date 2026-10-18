@@ -8,6 +8,14 @@ LiberaPack is a software prototype developed for the October 2026 hackathon in I
 
 ![System architecture](docs/architecture.svg)
 
+## Provenance, integrity and rights
+
+**Public authenticity checkpoint:** [GitHub provenance milestone (18 Oct 2026)](https://github.com/robertoonprogram/programmazioneapp/issues/1), [dated Git history and contributions](docs/PROVENANCE.md), and [file-integrity manifest](docs/INTEGRITY_2026-10-18.json).
+
+**Cryptographic source record:** [GitHub-signed Sigstore attestation](https://github.com/robertoonprogram/programmazioneapp/attestations/57118347) with [public transparency-log entry](https://search.sigstore.dev?logIndex=3310533139); future commits are covered by an [automated attestation workflow](.github/workflows/attest-source.yml). These records verify archive integrity and build provenance, **not conclusive legal authorship**.
+
+**Copyright © 2026 @robertoonprogram, for eligible original contributions. All rights reserved.** This is not an open-source license. See [NOTICE.md](NOTICE.md), [contribution policy](CONTRIBUTING.md) and [source integrity guide](docs/ATTESTATION.md).
+
 ## Live code in this repository
 
 The repository contains **two independent interactive browser demos** and a **reproducible deterministic calculation API**.
