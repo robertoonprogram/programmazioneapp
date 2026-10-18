@@ -1,0 +1,637 @@
+<!doctype html>
+<html lang="it">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#142633" />
+  <!-- Shopify Dev Dashboard / shopify.app.toml Client ID. Required only after installation. -->
+  <meta name="shopify-api-key" content="REPLACE_WITH_SHOPIFY_CLIENT_ID" />
+  <title>LiberaPack · La Porta dei Sapori</title>
+  <style>
+:root{--navy:#142633;--navy-deep:#10212e;--ink:#1a2b36;--muted:#7d8a91;--line:#e6e9eb;--paper:#f6f7f8;--white:#fff;--green:#148e78;--green-light:#dff5ee;--orange:#e6a44a;--pale:#fff3dd;--red:#d25148;--redlight:#fff0ed;--shadow:0 3px 12px rgba(16,33,46,.04)}
+*{box-sizing:border-box}html,body{margin:0;min-height:100%;font-family:'DM Sans',-apple-system,BlinkMacSystemFont,sans-serif;color:var(--ink)}body{background:var(--paper)}button,input,select{font:inherit}button{cursor:pointer}button:disabled{cursor:not-allowed;opacity:.48}button:focus-visible,input:focus-visible,select:focus-visible{outline:3px solid #7ccfc0;outline-offset:2px}.shell{display:flex;min-height:100vh}.sidebar{width:253px;min-width:253px;padding:30px 17px 20px;background:var(--navy);display:flex;flex-direction:column;color:#ecf5f7;min-height:100vh;position:sticky;top:0;height:100vh}.brand{display:flex;align-items:center;gap:12px;padding:0 8px 26px}.brand-icon{display:grid;place-items:center;width:42px;height:42px;border-radius:12px;background:#264e50;color:#8cdfc2}.brand strong{display:block;font:800 22px 'Manrope',sans-serif;letter-spacing:-.9px;line-height:1.2}.brand small{color:#739c9f;font-size:9px;letter-spacing:2.4px;font-weight:800}.store-block{display:flex;gap:11px;align-items:center;border:1px solid #324858;border-radius:12px;padding:12px 10px;margin:0 1px 30px}.store-avatar{width:34px;height:34px;display:grid;place-items:center;background:#e7b264;color:#142633;border-radius:9px;font-size:12px;font-weight:800;flex:none}.store-block strong{display:block;font-size:12px;font-weight:700}.store-block small{font-size:10px;color:#9db0b5}.nav-title{font-size:10px;color:#7997a1;letter-spacing:2px;font-weight:800;padding-left:14px;margin-bottom:11px}.nav-title-second{margin-top:33px}.menu{display:grid;gap:4px}.nav-button{display:flex;align-items:center;gap:10px;text-align:left;color:#acbec3;background:none;border:0;width:100%;border-radius:9px;padding:11px 14px;font-size:12.7px;font-weight:600;transition:background .12s}.nav-button:hover{color:white;background:#213947}.nav-button.is-active{background:#31534e;color:#e2ffe9}.nav-icon{width:19px;font-size:19px;text-align:center;line-height:1}.nav-count{margin-left:auto;background:#395261;color:#cedce0;font-size:10px;padding:3px 8px;border-radius:10px}.sidebar-spacer{flex:1}.side-note{border:1px solid #315263;background:#203a47;display:flex;gap:10px;padding:15px 12px;border-radius:12px;font-size:11px;font-weight:600;line-height:1.5}.side-note-icon{font-size:23px;color:#8bd8b6}.side-note small{display:block;color:#9bafb7;font-weight:400;font-size:10px;margin-top:6px}.side-foot{display:flex;justify-content:space-between;color:#597e88;font-size:9px;font-weight:800;letter-spacing:1.1px;margin:24px 5px 0}.workspace{flex:1;min-width:0}.topbar{height:70px;background:#fff;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--line);padding:0 32px;gap:16px}.breadcrumb{font-weight:800;font-size:10px;color:#92a0a5;letter-spacing:1.5px}.breadcrumb span{padding:0 12px;color:#c5ccd0}.breadcrumb b{color:var(--ink);letter-spacing:.3px;font-weight:700;font-size:12px;text-transform:none}.top-actions{display:flex;align-items:center;gap:18px}.sync-label{font-size:11px;color:#9aa6ac}.mode-pill{background:var(--pale);color:#a66f17;border-radius:6px;font-size:9px;font-weight:800;padding:7px 9px;letter-spacing:1px}.mode-pill.live{background:var(--green-light);color:#0b8069}.page-container{max-width:1600px;margin:auto;padding:31px 34px 55px}.page-title{display:flex;justify-content:space-between;align-items:flex-start;gap:25px;margin-bottom:28px}.eyebrow{color:var(--green);font-weight:800;letter-spacing:2px;font-size:10px;margin-bottom:12px}.page-title h1,.section-hero h1{font:800 31px/1.2 'Manrope',sans-serif;letter-spacing:-1.3px;margin:0 0 9px}.subtitle{margin:0;color:var(--muted);font-size:13px;line-height:1.55}.action-group{display:flex;gap:9px;flex-wrap:wrap;align-items:center}.btn{border:1px solid transparent;padding:12px 17px;border-radius:9px;font-size:12px;font-weight:800;display:inline-flex;align-items:center;justify-content:center;gap:8px;text-decoration:none;white-space:nowrap;min-height:41px}.btn-primary{background:var(--green);color:#fff}.btn-primary:hover:not(:disabled){background:#0c7a67}.btn-dark{color:white;background:var(--navy)}.btn-outline{background:#fff;border-color:#dfe5e7;color:var(--ink)}.btn-outline:hover:not(:disabled){border-color:#9ac5bd;background:#fafefd}.btn-sm{padding:8px 11px;min-height:34px;font-size:11px}.btn-ghost{border:0;background:transparent;color:var(--green);font-weight:800}.btn-red{color:var(--red);background:#fff4f0;border-color:#f8d7d1}.kpis{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px;margin-bottom:22px}.kpi{border:1px solid var(--line);border-radius:13px;background:#fff;padding:22px;box-shadow:var(--shadow);position:relative;min-height:130px}.kpi-label{color:#879399;font-size:11px;font-weight:700}.kpi-number{font:800 34px 'Manrope',sans-serif;letter-spacing:-1px;display:block;margin:12px 0 4px}.kpi-foot{font-size:10px;color:#9ca5a9}.kpi-icon{position:absolute;right:18px;top:18px;display:grid;place-items:center;color:var(--green);background:#e8f7f1;border-radius:9px;width:34px;height:34px;font-size:19px}.kpi.warn .kpi-icon{color:#b07522;background:#fff3de}.columns{display:grid;grid-template-columns:1.4fr 1fr;gap:18px}.panel{border:1px solid var(--line);background:white;border-radius:13px;box-shadow:var(--shadow);overflow:hidden}.panel-head{display:flex;align-items:center;justify-content:space-between;padding:21px 23px 17px;gap:13px}.panel-head h2,.panel-head h3{font:800 15px 'Manrope',sans-serif;margin:0}.panel-head p{color:var(--muted);font-size:11px;margin:5px 0 0}.panel-content{padding:0 23px 23px}.mini-table,.data-table{width:100%;border-collapse:collapse;text-align:left}.mini-table th,.data-table th{font-size:10px;color:#8b989e;letter-spacing:.7px;font-weight:800;background:#fafbfb;padding:13px 14px;border-bottom:1px solid var(--line);text-transform:uppercase}.mini-table td,.data-table td{font-size:12px;padding:15px 14px;border-bottom:1px solid #edf0f0;vertical-align:middle}.mini-table tbody tr:last-child td,.data-table tbody tr:last-child td{border-bottom:0}.table-container{overflow-x:auto}.muted{color:var(--muted)}.strong{font-weight:800}.tag{display:inline-block;border-radius:6px;font-size:10px;padding:5px 8px;font-weight:800}.tag-ok{background:var(--green-light);color:#09836d}.tag-pending{background:#fff2dd;color:#ad7327}.tag-bad{background:#ffe9e5;color:#c34c44}.tag-neutral{background:#f0f2f3;color:#738289}.zone-symbol{display:inline-grid;width:32px;height:32px;place-items:center;border-radius:9px;background:#ecf6f1;color:var(--green);font-weight:800;font-size:13px;margin-right:9px}.sku{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:11px;color:#42647a;background:#eff4f7;padding:5px 7px;border-radius:5px;white-space:nowrap}.linkbtn{border:0;background:none;color:var(--green);font-size:11px;font-weight:800;padding:6px}.linkbtn:hover{text-decoration:underline}.notice{display:flex;align-items:flex-start;gap:11px;background:#fff7e9;border:1px solid #f6deac;border-radius:11px;padding:15px 18px;color:#825f2b;margin-bottom:22px;font-size:12px;line-height:1.6}.notice strong{display:block;color:#8c641f}.notice.info{background:#e9f7f4;border-color:#c4e6dc;color:#376b62}.notice.error{background:#fff0ed;border-color:#f5d2cc;color:#a0423b}.notice-icon{font-size:20px}.hero-card{background:var(--navy);color:white;border-radius:14px;padding:29px 30px;margin-bottom:20px;display:flex;align-items:center;justify-content:space-between;gap:28px;overflow:hidden;position:relative}.hero-card:after{content:'';width:255px;height:255px;position:absolute;right:-52px;bottom:-160px;border:45px solid #23535c;border-radius:50%;opacity:.45}.hero-card small{display:block;color:#8dccb9;font-weight:800;font-size:10px;letter-spacing:2px}.hero-card h2{font:800 22px 'Manrope',sans-serif;margin:11px 0;letter-spacing:-.65px;line-height:1.3}.hero-card p{color:#a5bac2;font-size:12px;line-height:1.65;margin:0;max-width:490px}.hero-card .btn{z-index:1;background:#f2bf78;color:#253a42}.bar{background:#edf1f2;height:8px;border-radius:8px;overflow:hidden}.bar>i{display:block;height:100%;background:var(--green);border-radius:8px}.progress-list{display:grid;gap:18px}.progress-row-top{display:flex;justify-content:space-between;font-size:12px;margin-bottom:9px}.progress-row-top b{font-weight:800}.filterbar{display:flex;gap:10px;align-items:center;flex-wrap:wrap;margin-bottom:18px}.filterbar input,.filterbar select{background:#fff;border:1px solid #dfe5e7;border-radius:8px;padding:10px 12px;color:var(--ink);font-size:12px;min-height:41px}.filterbar .search{min-width:230px;flex:1;max-width:420px}.filterbar label{font-size:11px;font-weight:800;color:var(--muted)}.num{font:800 15px 'Manrope',sans-serif}.check{accent-color:var(--green);width:17px;height:17px;vertical-align:middle}.table-footer{background:#fafbfb;border-top:1px solid var(--line);display:flex;justify-content:space-between;align-items:center;padding:15px 22px;color:var(--muted);font-size:11px}.empty{text-align:center;padding:60px 25px;color:var(--muted)}.empty-icon{font-size:38px;display:block;margin-bottom:17px}.empty h3{font:800 17px 'Manrope',sans-serif;color:var(--ink);margin:0 0 9px}.group-heading{display:flex;align-items:center;justify-content:space-between;margin:22px 0 12px}.group-heading h3{margin:0;font:800 15px 'Manrope',sans-serif}.group-heading .hint{font-size:11px;color:var(--muted)}.pick-summary{padding:17px 22px;border-bottom:1px solid var(--line);background:#fbfdfc;display:flex;justify-content:space-between;align-items:center;gap:20px}.big-qty{font:800 22px 'Manrope',sans-serif}.pack-list{display:grid;gap:16px}.pack-order{background:#fff;border:1px solid var(--line);border-radius:13px;overflow:hidden}.pack-top{padding:21px 22px;display:flex;justify-content:space-between;align-items:center;gap:12px;border-bottom:1px solid var(--line)}.pack-top h3{font:800 18px 'Manrope',sans-serif;margin:0}.pack-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:13px;padding:19px}.carton{border:1px solid #e3ebea;border-radius:11px;padding:17px;background:#fcfefd}.carton-header{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:15px;font-size:12px;font-weight:800}.sixths{display:grid;grid-template-columns:repeat(6,1fr);gap:4px;margin-bottom:14px}.sixth{height:14px;border-radius:3px;background:#e8eff0}.sixth.used{background:var(--green)}.carton-item{display:flex;align-items:flex-start;justify-content:space-between;gap:9px;padding:7px 0;border-bottom:1px solid #edf1f0;font-size:11px}.carton-item:last-child{border:0}.carton-item strong{font-weight:800}.pack-problem{padding:16px 20px;color:#aa4c3f;font-size:12px;line-height:1.8;background:#fff3f1}.catalog-status{display:flex;align-items:center;gap:8px;color:var(--muted);font-size:10px}.catalog-status i{width:7px;height:7px;background:var(--green);border-radius:50%;display:inline-block}.info-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}.setting-card{padding:24px}.setting-card h3{font:800 15px 'Manrope',sans-serif;margin:0 0 9px}.setting-card p{color:var(--muted);font-size:12px;line-height:1.7}.value-highlight{font:800 32px 'Manrope',sans-serif;margin:10px 0}.steps{display:grid;gap:15px}.step{display:flex;gap:13px;font-size:12px;color:#506168;line-height:1.6}.step b{color:var(--ink)}.step span.numstep{flex:none;display:grid;place-items:center;width:24px;height:24px;border-radius:50%;background:#e7f6ee;color:var(--green);font-weight:800;font-size:11px}.dialog{width:min(640px,calc(100vw - 26px));border:1px solid var(--line);border-radius:16px;padding:0;box-shadow:0 23px 80px rgba(18,38,49,.28)}.dialog::backdrop{background:rgba(12,27,38,.53);backdrop-filter:blur(2px)}.product-form{padding:25px}.modal-top{display:flex;justify-content:space-between;gap:15px;align-items:flex-start;padding-bottom:24px;border-bottom:1px solid var(--line)}.modal-top h2{font:800 24px 'Manrope',sans-serif;margin:0}.modal-close{font-size:28px;border:0;background:none;color:var(--muted);line-height:1}.modal-warning{background:#fff6e8;border:1px solid #f2d8a5;color:#815e2d;padding:12px;font-size:11px;line-height:1.6;margin-top:17px;border-radius:8px}.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin:22px 0}.field{display:grid;gap:7px;font-size:11px;font-weight:800}.field input,.field select{width:100%;border:1px solid #dfe4e6;border-radius:8px;padding:11px 12px;font-size:12px;color:var(--ink);background:#fff;min-height:42px}.toggle-line{display:flex;gap:12px;align-items:flex-start;background:#f8faf9;padding:13px 15px;border-radius:9px;cursor:pointer}.toggle-line input{accent-color:var(--green);margin-top:5px}.toggle-line strong,.toggle-line small{display:block}.toggle-line strong{font-size:12px}.toggle-line small{font-size:10px;color:var(--muted);margin-top:4px}.modal-footer{display:flex;justify-content:flex-end;gap:10px;border-top:1px solid var(--line);padding-top:20px;margin-top:22px}.modal-errors{font-size:12px;color:var(--red);background:var(--redlight);padding:11px;border-radius:8px;margin-top:12px}.toast{position:fixed;right:23px;bottom:22px;z-index:99;background:var(--navy);color:white;padding:14px 18px;border-radius:10px;box-shadow:0 10px 40px #152b3355;font-size:12px;max-width:420px;visibility:hidden;transform:translateY(14px);transition:.18s}.toast.show{visibility:visible;transform:translateY(0)}.toast.bad{background:#aa4b42}.banner{margin-bottom:20px}.muted-legend{font-size:11px;color:var(--muted)}.breakdown{display:flex;gap:17px;flex-wrap:wrap;font-size:12px}.breakdown b{color:var(--ink)}.no-overflow{overflow:hidden}
+@media(max-width:1250px){.kpis{grid-template-columns:repeat(2,1fr)}.columns{grid-template-columns:1fr}.sidebar{width:226px;min-width:226px}.page-container{padding:26px}.topbar{padding:0 26px}}
+@media(max-width:850px){.shell{display:block}.sidebar{width:100%;min-width:unset;position:relative;height:auto;min-height:auto;padding:16px 18px}.brand{padding:0 0 12px}.store-block,.nav-title,.side-note,.side-foot,.sidebar-spacer{display:none}.menu{display:flex;gap:4px;overflow-x:auto;padding:4px 0}.nav-button{flex:none;width:auto;padding:9px 10px;white-space:nowrap;font-size:11px}.nav-icon,.nav-count{display:none}.nav-title-second+.menu{margin-top:3px}.topbar{height:59px;padding:0 18px}.sync-label{display:none}.page-container{padding:22px 14px}.page-title{display:block}.page-title .action-group{margin-top:17px}.info-grid{grid-template-columns:1fr}}
+@media(max-width:560px){.kpis{gap:9px}.kpi{padding:16px;min-height:115px}.kpi-number{font-size:26px}.kpi-icon{width:26px;height:26px;font-size:15px;right:12px;top:12px}.page-title h1{font-size:25px}.form-grid{grid-template-columns:1fr}.filterbar .search{min-width:100%;max-width:unset}.top-actions{gap:8px}.hero-card{display:block}.hero-card .btn{margin-top:20px}.breadcrumb{font-size:9px}.mode-pill{font-size:8px}.panel-head{padding:15px}.mini-table td,.data-table td{padding:11px}.table-footer{padding:12px}}
+
+</style>
+  <script type="module">
+// ---- core.mjs ----
+/** LiberaPack — domain engine. No Shopify/DOM dependencies. */
+const DEFAULT_CAPACITY = 6;
+const CATEGORY_ORDER = ['Olio', 'Vino', 'Pasta', 'Conserve', 'Dolci', 'Altri'];
+
+function normalizeSku(sku) { return String(sku ?? '').trim().toUpperCase(); }
+function normalizeProduct(p) {
+  const units = p.spaceSixths === '' || p.spaceSixths == null ? null : Number(p.spaceSixths);
+  return {
+    id: String(p.id || ''), productId: String(p.productId || ''),
+    sku: String(p.sku || '').trim(), name: String(p.name || '').trim(),
+    category: String(p.category || 'Altri').trim(),
+    location: String(p.location || '').trim(),
+    spaceSixths: Number.isInteger(units) && units > 0 ? units : null,
+    weightGrams: p.weightGrams === '' || p.weightGrams == null ? null : Number(p.weightGrams),
+    volumeCm3: p.volumeCm3 === '' || p.volumeCm3 == null ? null : Number(p.volumeCm3),
+    price: String(p.price ?? '0'), active: p.active !== false,
+    productStatus: p.productStatus || 'ACTIVE'
+  };
+}
+function validateProduct(data, capacity = DEFAULT_CAPACITY) {
+  const err = [];
+  if (!normalizeSku(data.sku)) err.push('SKU obbligatorio.');
+  if (!String(data.name ?? '').trim()) err.push('Nome obbligatorio.');
+  if (!String(data.category ?? '').trim()) err.push('Categoria obbligatoria.');
+  const s = Number(data.spaceSixths);
+  if (!Number.isInteger(s) || s < 1 || s > capacity) err.push(`Ingombro tra 1 e ${capacity} sesti per articolo.`);
+  for (const [key, label] of [['weightGrams','Peso'], ['volumeCm3','Volume']]) {
+    if (data[key] != null && data[key] !== '' && (!Number.isFinite(Number(data[key])) || Number(data[key]) < 0)) err.push(`${label} non valido.`);
+  }
+  return err;
+}
+function packableLines(order) {
+  if (order.cancelledAt) return [];
+  return (order.lineItems || []).map(item => ({...item, remaining: Math.max(0, Number(item.unfulfilledQuantity ?? item.quantity ?? 0))})).filter(item => item.remaining > 0);
+}
+function getProductForLine(item, products) {
+  const byId = item.variantId && products.find(p => p.id && p.id === item.variantId);
+  if (byId) return byId;
+  const matches = products.filter(p => normalizeSku(p.sku) === normalizeSku(item.sku) && normalizeSku(p.sku));
+  return matches.length === 1 ? matches[0] : null;
+}
+function aggregatePicking(orders, products, selectedIds) {
+  const chosen = new Set(selectedIds || orders.map(o => o.id));
+  const rows = new Map();
+  for (const order of orders) {
+    if (!chosen.has(order.id)) continue;
+    for (const item of packableLines(order)) {
+      const p = getProductForLine(item, products);
+      const key = p?.id || `missing:${normalizeSku(item.sku) || item.id}`;
+      if (!rows.has(key)) rows.set(key, {
+        key, variantId: p?.id || item.variantId || null,
+        sku: p?.sku || item.sku || 'SENZA SKU',
+        name: p?.name || item.title || 'Articolo sconosciuto',
+        category: p?.category || 'Da configurare',
+        location: p?.location || 'Non assegnata',
+        quantity: 0, orders: new Set(),
+        configured: Boolean(p?.active && p?.spaceSixths && p.spaceSixths <= DEFAULT_CAPACITY),
+        spaceSixths: p?.spaceSixths || null
+      });
+      const row = rows.get(key); row.quantity += item.remaining; row.orders.add(order.name);
+      if (!p?.active || !p?.spaceSixths) row.configured = false;
+    }
+  }
+  return [...rows.values()].map(r=>({...r, orders:[...r.orders]})).sort((a,b)=>{
+    const rank = x => { const n=CATEGORY_ORDER.indexOf(x); return n < 0 ? CATEGORY_ORDER.length : n; };
+    return rank(a.category)-rank(b.category) || a.location.localeCompare(b.location,'it') || a.sku.localeCompare(b.sku,'it');
+  });
+}
+/** Best-fit decreasing, per order. Products are indivisible. */
+function packOrder(order, products, capacity = DEFAULT_CAPACITY) {
+  const lines = packableLines(order);
+  const issues = [], pieces = [];
+  if (!lines.length) return {orderId:order.id, orderName:order.name, packages:[], issues:[], units:0, ready:true};
+  for (const item of lines) {
+    const p = getProductForLine(item, products);
+    if (!p) {issues.push(`${item.sku || item.title || 'Articolo'}: manca nel catalogo configurato.`);continue;}
+    if (!p.active) {issues.push(`${p.sku}: prodotto disattivato in LiberaPack.`);continue;}
+    const space = p.spaceSixths;
+    if (!Number.isInteger(space) || space < 1 || space > capacity) {issues.push(`${p.sku}: ingombro non configurato o superiore a ${capacity}/6.`);continue;}
+    if (item.remaining > 5000) {issues.push(`${p.sku}: quantita fuori limite operativo (5000).`);continue;}
+    for (let i=0;i<item.remaining;i++) pieces.push({
+      sku:p.sku, name:p.name, category:p.category, location:p.location, variantId:p.id,
+      size:space, lineId:item.id
+    });
+  }
+  // Fail closed: never print a partial packing plan if any SKU lacks a valid size.
+  if (issues.length) return {orderId:order.id, orderName:order.name, packages:[], issues,units:0,ready:false};
+  pieces.sort((a,b)=>b.size-a.size || a.sku.localeCompare(b.sku));
+  const bins = [];
+  for(const piece of pieces) {
+    let chosen = null, bestRemaining = Number.POSITIVE_INFINITY;
+    for (const bin of bins) {
+      const rest = capacity-bin.used-piece.size;
+      if (rest >= 0 && rest < bestRemaining) {chosen=bin;bestRemaining=rest;}
+    }
+    if (!chosen) {chosen={used:0,items:new Map()};bins.push(chosen);}
+    chosen.used += piece.size;
+    const key=piece.variantId || piece.sku;
+    if(!chosen.items.has(key)) chosen.items.set(key,{sku:piece.sku,name:piece.name,quantity:0,size:piece.size,category:piece.category});
+    chosen.items.get(key).quantity++;
+  }
+  return {orderId:order.id,orderName:order.name,ready:true,issues:[],units:pieces.length,
+    packages:bins.map((b,i)=>({index:i+1,used:b.used,capacity,items:[...b.items.values()],orderName:order.name,orderId:order.id}))};
+}
+function buildPlan(orders, products, selectedIds) {
+  const ids = new Set(selectedIds || orders.map(o=>o.id));
+  const chosen=orders.filter(o=>ids.has(o.id));
+  const packed=chosen.map(o=>packOrder(o,products));
+  const picks=aggregatePicking(orders,products,[...ids]);
+  return {packed,picks,orders:chosen.length,packages:packed.reduce((n,o)=>n+o.packages.length,0),
+    units:picks.reduce((n,p)=>n+p.quantity,0),blocked:packed.filter(p=>!p.ready).length,
+    configuredUnits:picks.filter(x=>x.configured).reduce((n,p)=>n+p.quantity,0)};
+}
+function csvRows(rows) {
+  const cells=[['Zona','Posizione','SKU','Prodotto','Pezzi','Ordini','Sesti per pezzo','Configurato']];
+  for(const r of rows) cells.push([r.category,r.location,r.sku,r.name,r.quantity,r.orders.join(' | '),r.spaceSixths??'',r.configured?'SI':'NO']);
+  const esc=v=>`"${String(v??'').replaceAll('"','""')}"`;
+  return '\ufeff'+cells.map(row=>row.map(esc).join(';')).join('\r\n')+'\r\n';
+}
+function zplClean(value) {
+  return String(value??'').normalize('NFKD').replace(/[\u0300-\u036f]/g,'').replace(/[\^~\\\r\n\x00-\x1f]/g,' ').replace(/[^\x20-\x7e]/g,'?').slice(0,85);
+}
+/** ZPL II for Zebra at 203 dpi / approx 100x150mm; print via raw ZPL capable service. */
+function zplPacking(plan) {
+  let out='';
+  for (const order of plan.packed) for (const pack of order.packages) {
+    out += `^XA\n^CI28\n^PW800\n^LL1200\n^FO40,35^A0N,52,48^FDLIBERAPACK / COLLO^FS\n`;
+    out += `^FO40,120^A0N,82,70^FD${zplClean(order.orderName)}^FS\n`;
+    out += `^FO40,225^A0N,52,48^FDCollo ${pack.index} / ${order.packages.length}^FS\n`;
+    out += `^FO40,310^A0N,40,36^FDIngombro ${pack.used} / ${pack.capacity} sesti^FS\n`;
+    pack.items.slice(0,12).forEach((p,i)=>{out+=`^FO40,${390+i*48}^A0N,32,27^FD${zplClean(p.sku)} x${p.quantity} ${zplClean(p.name).slice(0,30)}^FS\n`;});    out += `^FO40,1010^BY3,2,105^BCN,105,Y,N,N^FD${zplClean(order.orderName.replace('#',''))}-${pack.index}^FS\n^XZ\n`;
+  }
+  return out;
+}
+function zplPicking(rows, date) {
+  let out='';
+  for(const r of rows) {
+    out += `^XA\n^PW800\n^LL1200\n^FO40,35^A0N,55,49^FDLIBERAPACK / PICK^FS\n`;
+    out += `^FO40,125^A0N,42,37^FD${zplClean(date)} - ${zplClean(r.category)}^FS\n`;
+    out += `^FO40,225^A0N,55,48^FD${zplClean(r.sku)}^FS\n^FO40,320^A0N,38,35^FD${zplClean(r.name)}^FS\n`;
+    out += `^FO40,420^A0N,42,40^FDZona: ${zplClean(r.location)}^FS\n^FO40,530^A0N,99,90^FDQTA ${r.quantity}^FS\n`;
+    out += `^FO40,720^A0N,32,30^FD${zplClean(r.orders.join(' / '))}^FS\n`;
+    out += `^FO40,940^BY3,2,105^BCN,105,Y,N,N^FD${zplClean(r.sku)}^FS\n^XZ\n`;
+  }
+  return out;
+}
+
+// ---- demo.mjs ----
+const today = new Date();
+const hoursAgo = h => new Date(today.getTime()-h*3600000).toISOString();
+const demoProducts = [
+  {id:'demo-v1',productId:'demo-p1',sku:'OL-EVO-500',name:'Olio EVO 500 ml',category:'Olio',location:'A01 · Scaffale olio',spaceSixths:2,weightGrams:820,volumeCm3:850,price:'15.90',active:true},
+  {id:'demo-v2',productId:'demo-p2',sku:'OL-EVO-100',name:'Olio EVO 100 ml',category:'Olio',location:'A01 · Scaffale olio',spaceSixths:1,weightGrams:240,volumeCm3:250,price:'5.90',active:true},
+  {id:'demo-v3',productId:'demo-p3',sku:'VIN-ROSSO',name:'Vino rosso Riviera 75 cl',category:'Vino',location:'B02 · Cantina',spaceSixths:2,weightGrams:1240,volumeCm3:1400,price:'12.50',active:true},
+  {id:'demo-v4',productId:'demo-p4',sku:'VIN-BIANCO',name:'Vino bianco Pigato 75 cl',category:'Vino',location:'B02 · Cantina',spaceSixths:2,weightGrams:1200,volumeCm3:1350,price:'13.00',active:true},
+  {id:'demo-v5',productId:'demo-p5',sku:'PAS-TROFIE',name:'Trofie liguri 500 g',category:'Pasta',location:'C04 · Pasta',spaceSixths:1,weightGrams:510,volumeCm3:700,price:'4.90',active:true},
+  {id:'demo-v6',productId:'demo-p6',sku:'CON-PESTO',name:'Pesto ligure 180 g',category:'Conserve',location:'D01 · Dispensa',spaceSixths:1,weightGrams:330,volumeCm3:420,price:'7.20',active:true},
+  {id:'demo-v7',productId:'demo-p7',sku:'BOX-REGALO',name:'Confezione regalo grande',category:'Altri',location:'E01 · Packaging',spaceSixths:6,weightGrams:300,volumeCm3:2500,price:'4.00',active:true}
+];
+const li=(sku,variantId,qty,i)=>({id:'demo-li'+i,sku,variantId,title:demoProducts.find(p=>p.id===variantId)?.name??sku,quantity:qty,unfulfilledQuantity:qty});
+const demoOrders = [
+  {id:'demo-o1',name:'#1051',customerName:'Cliente demo A',createdAt:hoursAgo(2),financialStatus:'PAID',fulfillmentStatus:'UNFULFILLED',cancelledAt:null,lineItems:[li('OL-EVO-500','demo-v1',4,1),li('VIN-ROSSO','demo-v3',3,2),li('PAS-TROFIE','demo-v5',2,3)]},
+  {id:'demo-o2',name:'#1052',customerName:'Cliente demo B',createdAt:hoursAgo(1),financialStatus:'PAID',fulfillmentStatus:'UNFULFILLED',cancelledAt:null,lineItems:[li('OL-EVO-500','demo-v1',2,4),li('VIN-BIANCO','demo-v4',5,5),li('CON-PESTO','demo-v6',3,6)]},
+  {id:'demo-o3',name:'#1053',customerName:'Cliente demo C',createdAt:hoursAgo(5),financialStatus:'PAID',fulfillmentStatus:'PARTIALLY_FULFILLED',cancelledAt:null,lineItems:[li('VIN-ROSSO','demo-v3',2,7),{...li('PAS-TROFIE','demo-v5',4,8),unfulfilledQuantity:2},li('OL-EVO-100','demo-v2',6,9)]},
+  {id:'demo-o4',name:'#1054',customerName:'Cliente demo D',createdAt:hoursAgo(4),financialStatus:'PENDING',fulfillmentStatus:'UNFULFILLED',cancelledAt:null,lineItems:[li('BOX-REGALO','demo-v7',1,10),li('VIN-BIANCO','demo-v4',1,11)]}
+];
+
+// ---- shopify.mjs ----
+
+const API_URL='shopify:admin/api/2026-10/graphql.json';
+async function graphql(query, variables={}) {
+  if (!window.shopify) throw new Error('App Bridge non attivo: apri LiberaPack da Shopify Admin e verifica il Client ID.');
+  const resp = await fetch(API_URL,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({query,variables})});
+  let json;
+  try {json = await resp.json();} catch {throw new Error(`Risposta Shopify non leggibile (HTTP ${resp.status}).`);}
+  if(!resp.ok) throw new Error(`Shopify HTTP ${resp.status}: ${JSON.stringify(json).slice(0,230)}`);
+  if (json.errors?.length) throw new Error(json.errors.map(e=>e.message).join(' · '));
+  return json.data;
+}
+function assertUserErrors(payload, name) {
+  if(payload?.userErrors?.length) throw new Error(`${name}: ${payload.userErrors.map(e=>e.message).join(' · ')}`);
+  return payload;
+}
+function metaValue(items, key) {return (items||[]).find(x=>x.key===key)?.value;}
+async function fetchCatalog() {
+  const products=[];let cursor=null;let more=true;let pages=0;
+  const query=`query LiberaPackProducts($cursor:String){
+    productVariants(first:100,after:$cursor){
+      nodes{id sku price title inventoryItem{id} product{id title productType status}
+        metafields(first:20,namespace:"liberapack"){nodes{key value type}}}
+      pageInfo{hasNextPage endCursor}
+    }
+  }`;
+  while(more && pages++<30) {
+    const d=await graphql(query,{cursor});
+    const conn=d.productVariants;
+    for(const v of conn.nodes) products.push(normalizeProduct({
+      id:v.id,productId:v.product.id,inventoryItemId:v.inventoryItem?.id,
+      name:v.title==='Default Title'?v.product.title:`${v.product.title} — ${v.title}`,
+      productName:v.product.title,variantTitle:v.title,
+      sku:v.sku,price:v.price,category:metaValue(v.metafields.nodes,'category') || v.product.productType || 'Altri',
+      location:metaValue(v.metafields.nodes,'location') || '',
+      spaceSixths:metaValue(v.metafields.nodes,'space_sixths') ?? null,
+      weightGrams:metaValue(v.metafields.nodes,'weight_grams') ?? null,
+      volumeCm3:metaValue(v.metafields.nodes,'volume_cm3') ?? null,
+      active:metaValue(v.metafields.nodes,'enabled') !== 'false',productStatus:v.product.status
+    }));
+    // Extend normalized product with Shopify-only identifiers for editing.
+    const start=products.length-conn.nodes.length;
+    conn.nodes.forEach((v,i)=>{
+      products[start+i].inventoryItemId=v.inventoryItem?.id;
+      products[start+i].productName=v.product.title;
+      products[start+i].variantTitle=v.title;
+    });
+    more=conn.pageInfo.hasNextPage;cursor=conn.pageInfo.endCursor;
+  }
+  if(more) throw new Error('Catalogo oltre 3000 varianti: serve sincronizzazione bulk per un catalogo molto grande.');
+  return products;
+}
+async function fetchOpenOrders() {
+  let orders=[];let cursor=null;let more=true;let pages=0;
+  const query=`query LiberaPackOrders($cursor:String){
+    orders(first:100,after:$cursor,reverse:true,sortKey:CREATED_AT,query:"fulfillment_status:unfulfilled OR fulfillment_status:partial"){
+      nodes{id name createdAt cancelledAt displayFinancialStatus displayFulfillmentStatus
+        lineItems(first:100){nodes{id title sku quantity unfulfilledQuantity variant{id}}pageInfo{hasNextPage}}}
+      pageInfo{hasNextPage endCursor}
+    }
+  }`;
+  while(more&&pages++<5){
+    const conn=(await graphql(query,{cursor})).orders;
+    for(const o of conn.nodes){
+      const lines=o.lineItems.nodes;
+      if(o.lineItems.pageInfo.hasNextPage) throw new Error(`Ordine ${o.name}: oltre 100 righe. Serve paginazione righe prima di stamparlo.`);
+      if(o.cancelledAt || !lines.some(l=>l.unfulfilledQuantity>0))continue;
+      orders.push({id:o.id,name:o.name,createdAt:o.createdAt,cancelledAt:o.cancelledAt,
+        customerName:'',financialStatus:o.displayFinancialStatus,fulfillmentStatus:o.displayFulfillmentStatus,
+        lineItems:lines.map(l=>({id:l.id,sku:l.sku,variantId:l.variant?.id||null,title:l.title,quantity:l.quantity,unfulfilledQuantity:l.unfulfilledQuantity}))});
+    }
+    more=conn.pageInfo.hasNextPage;cursor=conn.pageInfo.endCursor;
+  }
+  if (more) throw new Error('Più di 500 ordini aperti: restringere per data o integrare la sincronizzazione bulk.');
+  return orders;
+}
+function mf(ownerId,key,value,type) {return {ownerId,namespace:'liberapack',key,type,value:String(value)};}
+async function savePackingFields(variantId, product, previous=null) {
+  const fields=[
+    mf(variantId,'space_sixths',product.spaceSixths,'number_integer'),
+    mf(variantId,'enabled',Boolean(product.active),'boolean'),
+    mf(variantId,'location',product.location || 'Non assegnata','single_line_text_field'),
+    mf(variantId,'category',product.category,'single_line_text_field')
+  ];
+  if(product.weightGrams!==null && product.weightGrams!=='' && product.weightGrams!==undefined) fields.push(mf(variantId,'weight_grams',Math.round(Number(product.weightGrams)),'number_integer'));
+  if(product.volumeCm3!==null && product.volumeCm3!=='' && product.volumeCm3!==undefined) fields.push(mf(variantId,'volume_cm3',Math.round(Number(product.volumeCm3)),'number_integer'));
+  const d=await graphql(`mutation LiberaPackMetafields($fields:[MetafieldsSetInput!]!){metafieldsSet(metafields:$fields){userErrors{message field}metafields{id}}}`,{fields});
+  assertUserErrors(d.metafieldsSet,'Metafields LiberaPack');
+  // Clear optional numeric data, instead of silently keeping a stale old value.
+  const deletes=[];
+  for(const [property,key] of [['weightGrams','weight_grams'],['volumeCm3','volume_cm3']]){
+    if(previous && previous[property] != null && previous[property] !== '' && (product[property] == null || product[property] === '')){
+      deletes.push({ownerId:variantId,namespace:'liberapack',key});
+    }
+  }
+  if(deletes.length){
+    const r=await graphql(`mutation LiberaPackClearMetafields($metafields:[MetafieldIdentifierInput!]!){metafieldsDelete(metafields:$metafields){deletedMetafields{key}userErrors{message field}}}`,{metafields:deletes});
+    assertUserErrors(r.metafieldsDelete,'Pulizia metafield LiberaPack');
+  }
+}
+async function updateInventorySku(inventoryItemId,sku) {
+  if(!inventoryItemId) throw new Error('Variante priva di inventory item: non posso salvare lo SKU.');
+  const d=await graphql(`mutation LiberaPackSku($id:ID!,$input:InventoryItemInput!){inventoryItemUpdate(id:$id,input:$input){inventoryItem{id sku} userErrors{message field}}}`,{id:inventoryItemId,input:{sku}});
+  assertUserErrors(d.inventoryItemUpdate,'SKU Shopify');
+}
+async function updateVariantPrice(productId,variantId,price) {
+  const d=await graphql(`mutation LiberaPackPrice($productId:ID!,$variants:[ProductVariantsBulkInput!]!){productVariantsBulkUpdate(productId:$productId,variants:$variants){userErrors{message field}productVariants{id price}}}`,{productId,variants:[{id:variantId,price:String(price)}]});
+  assertUserErrors(d.productVariantsBulkUpdate,'Prezzo Shopify');
+}
+async function createShopifyProduct(data) {
+  const product={title:data.name,productType:data.category,status:'DRAFT'};
+  const d=await graphql(`mutation LiberaPackCreate($product:ProductCreateInput!){productCreate(product:$product){product{id variants(first:1){nodes{id inventoryItem{id}}}}userErrors{message field}}}`,{product});
+  const created=assertUserErrors(d.productCreate,'Creazione prodotto').product;  if(!created?.variants?.nodes?.[0]) throw new Error('Prodotto creato come bozza, ma nessuna variante disponibile. Controlla il catalogo Shopify.');
+  const variant=created.variants.nodes[0];
+  try{
+    await updateInventorySku(variant.inventoryItem?.id,data.sku);
+    await updateVariantPrice(created.id,variant.id,data.price || '0');
+    await savePackingFields(variant.id,data);
+  }catch(e){throw new Error(`Prodotto bozza creato su Shopify ma configurazione incompleta: ${e.message}. Controlla in Prodotti prima di ripetere.`);}
+  return variant.id;
+}
+async function updateShopifyProduct(old, data) {
+  if (!old?.id || !old?.productId)throw new Error('ID Shopify mancante.');
+  // Existing variants may share a parent product: editing the parent title impacts all siblings.
+  const baseName=old.variantTitle && old.variantTitle!=='Default Title' ? data.name.split(' — ')[0] : data.name;
+  const currentBase=old.productName||old.name;
+  if(baseName!==currentBase || data.category!==old.category) {
+    const d=await graphql(`mutation LiberaPackProductUpdate($product:ProductUpdateInput!){productUpdate(product:$product){product{id}userErrors{message field}}}`,{product:{id:old.productId,title:baseName,productType:data.category}});
+    assertUserErrors(d.productUpdate,'Aggiornamento prodotto');
+  }
+  if(normalizeSku(data.sku)!==normalizeSku(old.sku))await updateInventorySku(old.inventoryItemId,data.sku);
+  if(Number(old.price)!==Number(data.price))await updateVariantPrice(old.productId,old.id,data.price);
+  await savePackingFields(old.id,data,old);
+}
+
+// ---- app.mjs ----
+
+
+
+const $=id=>document.getElementById(id);
+const isEmbedded=window.self!==window.top;
+const params=new URLSearchParams(location.search);
+const isShopifyLaunch=isEmbedded && (params.has('host') || params.has('shop') || params.get('mode')==='shopify');
+const isDemo=params.get('demo')==='1' || !isShopifyLaunch;
+if(!isDemo){const script=document.createElement('script');script.src='https://cdn.shopify.com/shopifycloud/app-bridge.js';document.head.append(script);}
+const state={mode:isDemo?'demo':'shopify',route:'dashboard',products:[],orders:[],selected:new Set(),
+  initialized:false,dateFilter:'today',orderQuery:'',productQuery:'',loading:false,error:'',
+  checkedPicks:new Set(),editingId:null,lastSync:null};
+const routeNames={dashboard:'Panoramica',orders:'Ordini Shopify',picking:'Prelievo per zona',packing:'Composizione colli',catalog:'Catalogo prodotti',settings:'Impostazioni'};
+const esc=v=>String(v??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const asNumber=n=>Number(n||0).toLocaleString('it-IT');
+const numMoney=n=>new Intl.NumberFormat('it-IT',{style:'currency',currency:'EUR'}).format(Number(n||0));
+const niceDate=v=>{try{return new Date(v).toLocaleString('it-IT',{day:'2-digit',month:'short',hour:'2-digit',minute:'2-digit'});}catch{return v;}};
+const dateLabel=()=>new Date().toLocaleDateString('it-IT',{day:'2-digit',month:'long',year:'numeric'});
+const localDate=d=>{const x=new Date(d);return `${x.getFullYear()}-${String(x.getMonth()+1).padStart(2,'0')}-${String(x.getDate()).padStart(2,'0')}`;};
+let toastTimer;
+function toast(message, bad=false){const n=$('toast');n.textContent=message;n.className=`toast show${bad?' bad':''}`;clearTimeout(toastTimer);toastTimer=setTimeout(()=>n.className='toast',4000);}
+const demoCache=new Map();
+const getDemoStore=key=>{try{return localStorage.getItem(key);}catch{return demoCache.get(key)??null;}};
+const setDemoStore=(key,value)=>{demoCache.set(key,value);try{localStorage.setItem(key,value);}catch{/* In an opaque/file origin, keep data in memory. */}};
+const clearDemoStore=key=>{demoCache.delete(key);try{localStorage.removeItem(key);}catch{/* Storage may be disabled. */}};
+function demoLoad(){
+  try { const p=JSON.parse(getDemoStore('liberapack-demo-products-v2'));if(Array.isArray(p))state.products=p.map(normalizeProduct);else state.products=structuredClone(demoProducts).map(normalizeProduct); }
+  catch {state.products=structuredClone(demoProducts).map(normalizeProduct);}
+  try {const o=JSON.parse(getDemoStore('liberapack-demo-orders-v2'));state.orders=Array.isArray(o)?o:structuredClone(demoOrders);}catch{state.orders=structuredClone(demoOrders);}
+}
+function demoSave(){if(state.mode==='demo'){setDemoStore('liberapack-demo-products-v2',JSON.stringify(state.products));setDemoStore('liberapack-demo-orders-v2',JSON.stringify(state.orders));}}
+async function waitForAppBridge(ms=5000){
+  if(window.shopify)return;
+  const until=Date.now()+ms;
+  while(!window.shopify && Date.now()<until)await new Promise(r=>setTimeout(r,120));
+  if(!window.shopify)throw new Error('Shopify App Bridge non avviato. Configura il Client ID e apri dal pannello App di Shopify.');
+}
+async function reload(){
+  if(state.loading)return;
+  state.loading=true;
+  $('sync-label').textContent='Sincronizzazione...';
+  try{
+    if(state.mode==='demo'){demoLoad();state.error='';}
+    else {await waitForAppBridge();const [products,orders]=await Promise.all([fetchCatalog(),fetchOpenOrders()]);state.products=products;state.orders=orders;state.error='';}
+    if(!state.initialized){state.selected=new Set(state.orders.map(o=>o.id));state.initialized=true;}
+    else state.selected=new Set([...state.selected].filter(id=>state.orders.some(o=>o.id===id)));
+    state.lastSync=new Date();
+    $('sync-label').textContent=state.mode==='demo'?'Dati di esempio':'Shopify sincronizzato';
+  }catch(e){state.error=e.message||String(e);$('sync-label').textContent='Errore connessione';toast(state.error,true);}
+  finally{state.loading=false;render();}
+}
+function visibleOrders(){
+  let rows=state.orders.filter(o=>!o.cancelledAt && o.lineItems?.some(i=>Number(i.unfulfilledQuantity??i.quantity)>0));
+  if(state.dateFilter==='today')rows=rows.filter(o=>localDate(o.createdAt)===localDate(new Date()));
+  if(state.dateFilter==='yesterday'){const d=new Date();d.setDate(d.getDate()-1);rows=rows.filter(o=>localDate(o.createdAt)===localDate(d));}
+  if(state.orderQuery){const s=state.orderQuery.toLowerCase();rows=rows.filter(o=>o.name.toLowerCase().includes(s)||o.lineItems.some(i=>(i.sku||'').toLowerCase().includes(s)));}
+  return rows;
+}
+function chosenIds(){return visibleOrders().filter(o=>state.selected.has(o.id)).map(o=>o.id);}
+function plan(){return buildPlan(visibleOrders(),state.products,chosenIds());}
+function percent(a,b){return b?Math.round(a/b*100):0;}
+function selectFilter(){return `<select id="date-filter" aria-label="Filtra per data"><option value="today" ${state.dateFilter==='today'?'selected':''}>Ordini di oggi</option><option value="yesterday" ${state.dateFilter==='yesterday'?'selected':''}>Ordini di ieri</option><option value="all" ${state.dateFilter==='all'?'selected':''}>Tutti gli ordini aperti</option></select>`;}
+function title(eyebrow,name,description,actions=''){return `<div class="page-title"><div><div class="eyebrow">${esc(eyebrow)}</div><h1>${esc(name)}</h1><p class="subtitle">${esc(description)}</p></div>${actions?`<div class="action-group">${actions}</div>`:''}</div>`;}
+function action(type,label,style='btn-outline',disabled=false){return `<button class="btn ${style}" data-action="${type}" ${disabled?'disabled':''}>${label}</button>`;}
+function kpi(label,n,foot,icon,warn=false){return `<div class="kpi${warn?' warn':''}"><div class="kpi-label">${label}</div><span class="kpi-icon">${icon}</span><strong class="kpi-number">${asNumber(n)}</strong><div class="kpi-foot">${foot}</div></div>`;}
+function statusTag(condition,on='Pronto',off='Da configurare'){return `<span class="tag ${condition?'tag-ok':'tag-bad'}">${condition?on:off}</span>`;}
+function selectedWarning(p){if(!chosenIds().length)return `<div class="notice"><span class="notice-icon">ⓘ</span><div><strong>Nessun ordine selezionato</strong>Apri la sezione Ordini, scegli quelli da preparare e ritorna qui.</div></div>`;
+  if(p.blocked)return `<div class="notice error"><span class="notice-icon">!</span><div><strong>${p.blocked} ordini bloccati per ingombri mancanti</strong>Configura gli SKU nel catalogo. La stampa dei colli è disabilitata per evitare spedizioni incomplete.</div></div>`;
+  return '';}
+function dashboard(){const p=plan(); const list=p.picks.slice(0,5);const cats=groupsByCategory(p.picks);
+  const orderRows=visibleOrders().slice(0,5).map(o=>`<tr><td class="strong">${esc(o.name)}</td><td>${niceDate(o.createdAt)}</td><td>${asNumber(o.lineItems.reduce((s,l)=>s+Number(l.unfulfilledQuantity??l.quantity??0),0))}</td><td>${statusTag(state.selected.has(o.id),'Incluso','Escluso')}</td></tr>`).join('');
+  return `
+  ${title('CENTRO OPERATIVO','Buongiorno, magazzino 👋',`Panoramica operativa · ${dateLabel()}`,
+    `${action('refresh','↻ Sincronizza','btn-outline')}${action('open-picking','Apri il prelievo →','btn-primary')}`)}
+  <div class="kpis">${kpi('Ordini selezionati',p.orders,`${visibleOrders().length} aperti nel periodo`,'▤')}${kpi('Pezzi da prelevare',p.units,'Aggregati tra tutti gli ordini','◈')}${kpi('Colli previsti',p.packages,'Capacità 6/6 per collo','▣')}${kpi('Ordini da configurare',p.blocked,p.blocked?'Mancano regole di imballo':'Tutti pronti','!',p.blocked>0)}</div>
+  ${selectedWarning(p)}
+  <div class="hero-card"><div><small>FLUSSO INTELLIGENTE</small><h2>Un solo giro in magazzino.<br>Non un giro per ogni ordine.</h2><p>Raggruppiamo le quantità per categoria e scaffale, poi creiamo automaticamente i colli per ciascun ordine Shopify.</p></div>${action('open-picking','Vai alla lista picking →','btn-primary')}</div>
+  <div class="columns">
+    <section class="panel"><div class="panel-head"><div><h2>Prelievo prioritario</h2><p>Le quantità sommate tra gli ordini selezionati</p></div><button data-action="open-picking" class="linkbtn">Vedi tutto →</button></div><div class="table-container"><table class="mini-table"><thead><tr><th>Zona</th><th>Articolo</th><th>SKU</th><th style="text-align:right">Pezzi</th></tr></thead><tbody>${list.map(x=>`<tr><td>${esc(x.category)}</td><td class="strong">${esc(x.name)}</td><td><span class="sku">${esc(x.sku)}</span></td><td style="text-align:right" class="num">${x.quantity}</td></tr>`).join('')||`<tr><td colspan="4" class="empty">Nessun articolo da prelevare</td></tr>`}</tbody></table></div></section>
+    <section class="panel"><div class="panel-head"><div><h2>Distribuzione per settore</h2><p>Quantità da raccogliere, per fare un solo passaggio</p></div></div><div class="panel-content"><div class="progress-list">${cats.slice(0,6).map(c=>`<div><div class="progress-row-top"><b>${esc(c.name)}</b><span>${c.qty} pz · ${percent(c.qty,p.units)}%</span></div><div class="bar"><i style="width:${percent(c.qty,p.units)}%"></i></div></div>`).join('')||'<div class="empty">Nessun ordine da preparare</div>'}</div></div></section>
+  </div>
+  <section class="panel" style="margin-top:18px"><div class="panel-head"><div><h2>Ultimi ordini aperti</h2><p>La sincronizzazione non modifica lo stato delle spedizioni</p></div><button data-action="open-orders" class="linkbtn">Gestisci selezione →</button></div><div class="table-container"><table class="data-table"><thead><tr><th>Ordine</th><th>Data</th><th>Articoli</th><th>Selezione</th></tr></thead><tbody>${orderRows||'<tr><td colspan="4" class="empty">Nessun ordine visibile nel periodo scelto.</td></tr>'}</tbody></table></div></section>`;
+}
+function ordersPage(){const rows=visibleOrders();const n=chosenIds().length;
+  return `${title('ORDINI · SHOPIFY','Ordini da preparare','Scegli gli ordini da includere nel giro di magazzino. Non viene creato alcun fulfillment su Shopify.',`${action('open-picking','Genera prelievo →','btn-primary',n===0)}`)}
+  <div class="filterbar">${selectFilter()}<input class="search" type="search" id="order-search" placeholder="Cerca numero ordine o SKU" value="${esc(state.orderQuery)}"/><span class="muted-legend">${rows.length} ordini visualizzati</span></div>
+  <section class="panel"><div class="table-container"><table class="data-table"><thead><tr><th style="width:45px"><input type="checkbox" class="check" id="select-all" ${rows.length && rows.every(o=>state.selected.has(o.id))?'checked':''} aria-label="Seleziona tutti gli ordini" /></th><th>Ordine</th><th>Data</th><th>Stato pagamento</th><th>Da preparare</th><th>SKU</th><th>Selezione</th></tr></thead><tbody>${rows.map(o=>{const qty=o.lineItems.reduce((s,l)=>s+Number(l.unfulfilledQuantity??l.quantity),0);return `<tr><td><input type="checkbox" class="check" data-order="${esc(o.id)}" ${state.selected.has(o.id)?'checked':''} aria-label="Seleziona ordine ${esc(o.name)}" /></td><td class="strong">${esc(o.name)}</td><td>${niceDate(o.createdAt)}</td><td><span class="tag ${o.financialStatus==='PAID'?'tag-ok':'tag-pending'}">${esc(o.financialStatus)}</span></td><td><strong>${qty}</strong> pz</td><td><span class="muted">${o.lineItems.length} righe</span></td><td>${statusTag(state.selected.has(o.id),'Incluso','Escluso')}</td></tr>`;}).join('')||'<tr><td colspan="7"><div class="empty"><span class="empty-icon">▤</span><h3>Nessun ordine trovato</h3>Modifica il periodo oppure sincronizza Shopify.</div></td></tr>'}</tbody></table></div>
+  <div class="table-footer"><span><b>${n}</b> ordini selezionati per il prossimo prelievo</span><span>Le quantità già evase sono escluse</span></div></section>`;
+}
+function groupsByCategory(rows){const m=new Map();for(const r of rows){const n=r.category;if(!m.has(n))m.set(n,{name:n,qty:0,rows:[]});const c=m.get(n);c.qty+=r.quantity;c.rows.push(r);}return [...m.values()].sort((a,b)=>{const aidx=CATEGORY_ORDER.indexOf(a.name),bidx=CATEGORY_ORDER.indexOf(b.name);return (aidx<0?99:aidx)-(bidx<0?99:bidx);});}
+function pickingPage(){const p=plan();const groups=groupsByCategory(p.picks);
+  return `${title('MAGAZZINO · PICKING','Un unico giro di prelievo','Prodotti raggruppati per zona e SKU, sommando le quantità di tutti gli ordini.',`${action('print-picking','▤ Stampa foglio A4','btn-outline',!p.picks.length)}${action('print-pick-labels','▣ Etichette picking','btn-primary',!p.picks.length)}`)}
+  <div class="kpis">${kpi('Totale pezzi',p.units,'Senza ripetizioni per ordine','▤')}${kpi('Righe distinte',p.picks.length,'SKU da raggiungere','◈')}${kpi('Settori magazzino',groups.length,'Aree da visitare','⌖')}${kpi('Righe non configurate',p.picks.filter(x=>!x.configured).length,'Correggi il catalogo','!',p.picks.some(x=>!x.configured))}</div>
+  ${selectedWarning(p)}
+  <div class="filterbar">${action('export-csv','↓ Esporta CSV','btn-outline',!p.picks.length)}${action('export-zpl-pick','↓ Scarica ZPL etichette','btn-outline',!p.picks.length)}<span class="muted-legend">${dateLabel()} · ${p.orders} ordini selezionati</span></div>
+  ${groups.map((g,i)=>`<div class="group-heading"><h3><span class="zone-symbol">${i+1}</span>${esc(g.name)} <span class="muted-legend">· ${g.rows.length} SKU</span></h3><span class="tag tag-neutral">${g.qty} pezzi</span></div><section class="panel"><div class="table-container"><table class="data-table"><thead><tr><th>Posizione</th><th>SKU</th><th>Prodotto</th><th>Quantità totale</th><th>Ordini coinvolti</th><th>Stato</th><th>Prelevato</th></tr></thead><tbody>${g.rows.map(r=>`<tr><td class="strong">${esc(r.location)}</td><td><span class="sku">${esc(r.sku)}</span></td><td>${esc(r.name)}</td><td class="num">${r.quantity}</td><td>${r.orders.length}</td><td>${statusTag(r.configured)}</td><td><input class="check" type="checkbox" data-pick="${esc(r.key)}" ${state.checkedPicks.has(r.key)?'checked':''} aria-label="Segna ${esc(r.sku)} prelevato" /></td></tr>`).join('')}</tbody></table></div><div class="pick-summary"><span class="muted-legend">Preleva tutte le unità di questa categoria insieme, indipendentemente dall'ordine.</span><strong class="big-qty">${g.qty} pz</strong></div></section>`).join('')||'<div class="panel"><div class="empty"><span class="empty-icon">≡</span><h3>La lista è vuota</h3>Seleziona almeno un ordine dalla sezione Ordini Shopify.</div></div>'}`;
+}
+function packageItemText(items){return items.map(i=>`<div class="carton-item"><span>${esc(i.name)} <span class="muted">(${esc(i.sku)})</span></span><strong>×${i.quantity}</strong></div>`).join('');}
+function packingPage(){const p=plan();const canPrint=Boolean(p.packages && !p.blocked);
+  return `${title('MAGAZZINO · PACKING','Composizione automatica colli','Ogni collo contiene prodotti di un solo ordine; capacità massima 6 sesti.',`${action('print-packing','▣ Stampa etichette colli','btn-primary',!canPrint)}`)}
+  <div class="kpis">${kpi('Ordini selezionati',p.orders,'Separati per cliente','▤')}${kpi('Colli calcolati',p.packages,'Un collo = 6/6','▣')}${kpi('Pezzi totali',p.units,'Da distribuire nei colli','◈')}${kpi('Ordini bloccati',p.blocked,'Controllo di sicurezza','!',p.blocked>0)}</div>
+  ${selectedWarning(p)}
+  <div class="filterbar">${action('export-zpl-pack','↓ Esporta ZPL colli','btn-outline',!canPrint)}<span class="muted-legend">Algoritmo best-fit decreasing; non considera ancora fragilità e peso massimo.</span></div>
+  <div class="pack-list">${p.packed.map(o=>`<section class="pack-order"><div class="pack-top"><div><h3>${esc(o.orderName)}</h3><span class="muted-legend">${o.units} prodotti da imballare</span></div>${o.ready?`<span class="tag tag-ok">${o.packages.length} ${o.packages.length===1?'collo':'colli'} previsti</span>`:'<span class="tag tag-bad">Da configurare</span>'}</div>
+  ${o.issues.length?`<div class="pack-problem">${o.issues.map(x=>`<div>⚠ ${esc(x)}</div>`).join('')}</div>`:`<div class="pack-grid">${o.packages.map(b=>`<article class="carton"><div class="carton-header"><span>COLLO ${b.index} / ${o.packages.length}</span><span class="tag ${b.used===6?'tag-ok':'tag-neutral'}">${b.used}/6</span></div><div class="sixths">${Array.from({length:6},(_,i)=>`<span class="sixth ${i<b.used?'used':''}"></span>`).join('')}</div>${packageItemText(b.items)}</article>`).join('')}</div>`}</section>`).join('')||'<section class="panel"><div class="empty"><span class="empty-icon">▣</span><h3>Nessun collo da preparare</h3>Vai su Ordini Shopify e seleziona gli ordini.</div></section>'}</div>`;
+}
+function catalogPage(){let items=[...state.products];if(state.productQuery){const q=state.productQuery.toLowerCase();items=items.filter(p=>[p.name,p.sku,p.category,p.location].some(x=>String(x||'').toLowerCase().includes(q)));}
+  const configured=state.products.filter(p=>p.spaceSixths && p.active).length;
+  return `${title('CATALOGO · SKU','Catalogo prodotti','Aggiungi, modifica o disattiva prodotti. Gli ingombri sono espressi in sesti di collo.',`${action('add-product','+ Aggiungi prodotto','btn-primary')}`)}
+  <div class="kpis">${kpi('Prodotti catalogati',state.products.length,'Varianti SKU disponibili','◈')}${kpi('Configurati',configured,'Ingombro e attivazione validi','✓')}${kpi('Da completare',state.products.filter(x=>!x.spaceSixths).length,'Manca ingombro 1/6–6/6','!',state.products.some(x=>!x.spaceSixths))}${kpi('Non attivi',state.products.filter(x=>!x.active).length,'Esclusi dalla composizione','⊘')}</div>
+  <div class="filterbar"><input id="product-search" class="search" type="search" placeholder="Cerca SKU, nome, zona..." value="${esc(state.productQuery)}"/><span class="muted-legend">${state.mode==='shopify'?'Le modifiche vengono salvate su Shopify':'Le modifiche demo restano in questo browser'}</span></div>
+  <section class="panel"><div class="table-container"><table class="data-table"><thead><tr><th>SKU</th><th>Nome</th><th>Categoria</th><th>Scaffale</th><th>Ingombro</th><th>Peso</th><th>Attivo per picking</th><th>Azioni</th></tr></thead><tbody>${items.map(p=>`<tr><td><span class="sku">${esc(p.sku||'SENZA SKU')}</span></td><td class="strong">${esc(p.name)}</td><td>${esc(p.category)}</td><td>${esc(p.location||'—')}</td><td><strong>${p.spaceSixths?`${p.spaceSixths}/6`:'—'}</strong></td><td>${p.weightGrams?`${p.weightGrams} g`:'—'}</td><td>${statusTag(p.active,'Attivo','Disattivo')}</td><td><button class="linkbtn" data-edit="${esc(p.id)}">Modifica</button><button class="linkbtn" data-toggle="${esc(p.id)}">${p.active?'Disattiva':'Attiva'}</button></td></tr>`).join('')||'<tr><td colspan="8"><div class="empty"><span class="empty-icon">◈</span><h3>Nessun prodotto trovato</h3>Aggiungine uno o modifica la ricerca.</div></td></tr>'}</tbody></table></div>
+  <div class="table-footer"><span>${items.length} righe visualizzate</span><span>1 unità = 1/6 del collo</span></div></section>`;
+}
+function settingsPage(){return `${title('CONFIGURAZIONE','Impostazioni','Il motore di packing usa una capacità di 6 unità per collo; ogni unità vale 1/6.')}
+  <div class="info-grid"><section class="panel setting-card"><div class="eyebrow">REGOLA DI IMBALLO</div><h3>Capacità del collo standard</h3><div class="value-highlight">6 / 6</div><div class="sixths">${Array.from({length:6},()=>'<span class="sixth used"></span>').join('')}</div><p>Ogni articolo occupa da 1 a 6 unità. Il programma cerca di minimizzare i colli senza dividere l'articolo tra scatole e senza mescolare ordini.</p><p><strong>Prossima fase:</strong> vincoli di peso, volume, fragilità, scatole differenti e regole di protezione per bottiglie.</p></section>
+  <section class="panel setting-card"><div class="eyebrow">CONNESSIONE</div><h3>${state.mode==='demo'?'Modalità dimostrativa':'Shopify Admin connesso'}</h3><div class="value-highlight" style="font-size:18px">${state.mode==='demo'?'DEMO LOCALE':'SHOPIFY LIVE'}</div><p>${state.mode==='demo'?'Dati inventati, non collegati a nessun negozio. Puoi modificare il catalogo e simulare nuovi ordini per provare l’algoritmo.':'Ordini e prodotti sono letti dalla GraphQL Admin API. Gli ingombri sono metafield associati alle varianti Shopify; non è necessario un altro gestionale.'}</p><p><b>API Shopify:</b> 2026-10 · <b>Versione:</b> LiberaPack 1.0</p></section>
+  <section class="panel setting-card"><div class="eyebrow">FLUSSO MAGAZZINO</div><h3>Come funziona la giornata</h3><div class="steps"><div class="step"><span class="numstep">1</span><div><b>Sincronizza Shopify</b><br>Vengono caricati gli ordini ancora da evadere.</div></div><div class="step"><span class="numstep">2</span><div><b>Scegli gli ordini</b><br>Seleziona gli ordini del giro di preparazione.</div></div><div class="step"><span class="numstep">3</span><div><b>Preleva per categoria</b><br>Una lista aggregata per olio, vino, pasta e scaffale.</div></div><div class="step"><span class="numstep">4</span><div><b>Prepara i colli</b><br>Assegna i pezzi ai colli del relativo ordine.</div></div><div class="step"><span class="numstep">5</span><div><b>Stampa</b><br>Foglio A4 o etichette termiche; file ZPL per Zebra.</div></div></div></section>
+  <section class="panel setting-card"><div class="eyebrow">${state.mode==='demo'?'TEST DEL SISTEMA':'LIMITI VERSIONE 1'}</div><h3>${state.mode==='demo'?'Simula un nuovo ordine':'Preparazione senza fulfillment'}</h3>${state.mode==='demo'?`<p>Aggiungi un ordine contenente il prodotto che preferisci. Il picking aggregato e i colli si aggiorneranno immediatamente.</p><div class="field"><label for="demo-product">Prodotto</label><select id="demo-product">${state.products.filter(p=>p.active).map(p=>`<option value="${esc(p.id)}">${esc(p.sku)} · ${esc(p.name)}</option>`).join('')}</select></div><div class="field" style="margin-top:13px"><label for="demo-qty">Quantità</label><input id="demo-qty" type="number" value="3" min="1" max="200"/></div><div class="action-group" style="margin-top:17px">${action('simulate-order','+ Crea ordine demo','btn-primary')}${action('reset-demo','Ripristina la demo','btn-outline')}</div>`:`<p>LiberaPack legge quantità non ancora evase. Non crea spedizioni, non modifica giacenze né contrassegna ordini come evasi. Queste operazioni restano nelle funzioni native Shopify.</p><p>La stampa avviene dal browser attraverso la finestra di stampa del dispositivo. ZPL può essere inviato a una stampante termica tramite software/servizio compatibile.</p>`}</section>
+  </div>`;}
+function render(){
+  document.querySelectorAll('[data-nav]').forEach(el=>el.classList.toggle('is-active',el.dataset.nav===state.route));
+  $('top-breadcrumb').textContent=routeNames[state.route];
+  $('mode-pill').textContent=state.mode==='demo'?'DEMO':'SHOPIFY';$('mode-pill').classList.toggle('live',state.mode==='shopify');
+  $('store-context').textContent=state.mode==='demo'?'Ambiente demo':'Shopify Admin';
+  $('nav-orders').textContent=visibleOrders().length;  $('app-banner').innerHTML=state.error?`<div class="banner notice error"><span class="notice-icon">!</span><div><strong>Connessione non disponibile</strong>${esc(state.error)}<div style="margin-top:8px">${action('refresh','Riprova sincronizzazione','btn-outline')}</div></div></div>`:state.mode==='demo'?`<div class="banner notice info"><span class="notice-icon">ⓘ</span><div><strong>Anteprima dimostrativa</strong>Questi sono dati inventati. Apri l'app da Shopify Admin dopo la configurazione per lavorare sugli ordini reali.</div></div>`:'';
+  $('view').innerHTML=({dashboard,orders:ordersPage,picking:pickingPage,packing:packingPage,catalog:catalogPage,settings:settingsPage}[state.route])();
+}
+function goto(route){state.route=route;render();window.scrollTo({top:0,behavior:'instant'});}
+function openProductDialog(id=null){
+  state.editingId=id;
+  const p=id?state.products.find(x=>x.id===id):null;
+  const form=$('product-form');form.reset();
+  $('modal-title').textContent=p?'Modifica prodotto':'Nuovo prodotto';
+  form.elements.sku.value=p?.sku||'';form.elements.name.value=p?.name||'';
+  form.elements.category.value=CATEGORY_ORDER.includes(p?.category)?p.category:'Altri';
+  form.elements.location.value=p?.location||'';form.elements.spaceSixths.value=String(p?.spaceSixths||1);
+  form.elements.price.value=p?.price||'0.00';form.elements.weightGrams.value=p?.weightGrams??'';form.elements.volumeCm3.value=p?.volumeCm3??'';
+  form.elements.active.checked=p?.active!==false;
+  $('modal-errors').hidden=true;
+  $('modal-warning').hidden=!(state.mode==='shopify');
+  $('modal-warning').textContent=state.mode==='shopify'?(p?'Attenzione: cambiare nome/categoria di un prodotto con più varianti può modificare anche le altre varianti. Le modifiche vengono registrate su Shopify.':'Il nuovo prodotto sarà creato come BOZZA in Shopify: potrai pubblicarlo dopo aver verificato disponibilità e prezzo.') : '';
+  $('product-submit').disabled=false;$('product-submit').textContent='Salva prodotto';
+  $('product-dialog').showModal();
+}
+function productFromForm(){const form=$('product-form');const v=k=>form.elements[k].value.trim();
+  return {sku:v('sku'),name:v('name'),category:v('category'),location:v('location'),spaceSixths:Number(v('spaceSixths')),
+    weightGrams:v('weightGrams')===''?null:Number(v('weightGrams')),
+    volumeCm3:v('volumeCm3')===''?null:Number(v('volumeCm3')),
+    price:v('price'),active:form.elements.active.checked};
+}
+async function saveProduct(event){
+  event.preventDefault();const data=productFromForm();const old=state.editingId?state.products.find(p=>p.id===state.editingId):null;
+  const errors=validateProduct(data);
+  if(!Number.isFinite(Number(data.price)) || Number(data.price)<0)errors.push('Prezzo non valido.');
+  if(state.products.some(p=>p.id!==old?.id && normalizeSku(p.sku)===normalizeSku(data.sku)))errors.push('Lo SKU deve essere univoco all’interno del catalogo.');
+  if(errors.length){$('modal-errors').hidden=false;$('modal-errors').textContent=errors.join(' ');return;}
+  $('modal-errors').hidden=true;$('product-submit').disabled=true;$('product-submit').textContent='Salvataggio...';
+  try{
+    if(state.mode==='demo'){
+      if(old)Object.assign(old,normalizeProduct({...old,...data}));
+      else state.products.push(normalizeProduct({...data,id:'demo-v'+Date.now(),productId:'demo-p'+Date.now()}));
+      demoSave();
+    }else {
+      if(old)await updateShopifyProduct(old,data);else await createShopifyProduct(data);
+      state.products=await fetchCatalog();
+    }
+    $('product-dialog').close();toast('Prodotto salvato correttamente.');render();
+  }catch(e){$('modal-errors').hidden=false;$('modal-errors').textContent=e.message||String(e);toast(e.message||'Errore durante il salvataggio.',true);}
+  finally{$('product-submit').disabled=false;$('product-submit').textContent='Salva prodotto';}
+}
+async function quickToggle(id){const p=state.products.find(x=>x.id===id);if(!p)return;
+  const target=!p.active;
+  if(!confirm(`${target?'Attivare':'Disattivare'} ${p.sku} per la pianificazione di magazzino?`))return;
+  try {if(state.mode==='shopify'){await updateShopifyProduct(p,{...p,active:target});state.products=await fetchCatalog();}
+    else {p.active=target;demoSave();}toast('Stato aggiornato.');render();}
+  catch(e){toast(e.message,true);}
+}
+function download(filename,text,type='text/plain;charset=utf-8'){
+  const blob=new Blob([text],{type});const url=URL.createObjectURL(blob);const a=document.createElement('a');a.href=url;a.download=filename;
+  document.body.append(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(url),1000);
+}
+const code39={
+  '0':'nnnwwnwnn','1':'wnnwnnnnw','2':'nnwwnnnnw','3':'wnwwnnnnn','4':'nnnwwnnnw','5':'wnnwwnnnn','6':'nnwwwnnnn','7':'nnnwnnwnw','8':'wnnwnnwnn','9':'nnwwnnwnn',
+  'A':'wnnnnwnnw','B':'nnwnnwnnw','C':'wnwnnwnnn','D':'nnnnwwnnw','E':'wnnnwwnnn','F':'nnwnwwnnn','G':'nnnnnwwnw','H':'wnnnnwwnn','I':'nnwnnwwnn','J':'nnnnwwwnn',
+  'K':'wnnnnnnww','L':'nnwnnnnww','M':'wnwnnnnwn','N':'nnnnwnnww','O':'wnnnwnnwn','P':'nnwnwnnwn','Q':'nnnnnnwww','R':'wnnnnnwwn','S':'nnwnnnwwn','T':'nnnnwnwwn',
+  'U':'wwnnnnnnw','V':'nwwnnnnnw','W':'wwwnnnnnn','X':'nwnnwnnnw','Y':'wwnnwnnnn','Z':'nwwnwnnnn','-':'nwnnnnwnw','.':'wwnnnnwnn',' ':'nwwnnnwnn','$':'nwnwnwnnn','/':'nwnwnnnwn','+':'nwnnnwnwn','%':'nnnwnwnwn','*':'nwnnwnwnn'
+};
+function barcode39(value){
+  const input=('*'+String(value||'').toUpperCase().replace(/[^0-9A-Z .$/+%-]/g,'')+'*');
+  let x=11;const bars=[];
+  for(const letter of input){const pattern=code39[letter];if(!pattern)continue;
+    for(let i=0;i<pattern.length;i++){const w=pattern[i]==='w'?3:1;if(i%2===0)bars.push(`<rect x="${x}" y="0" width="${w}" height="55"/>`);x+=w;}
+    x+=1;
+  }
+  return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${x+10} 55" preserveAspectRatio="none" style="display:block;width:100%;height:52px" aria-label="Barcode ${esc(value)}">${bars.join('')}</svg>`;
+}
+function printHtml(documentTitle,pages,pageType){
+  const pop=window.open('','_blank');if(!pop){toast('Il browser ha bloccato la finestra di stampa. Abilita popup.',true);return;}
+  const landscape=pageType==='a4';
+  pop.document.open();
+  pop.document.write(`<!doctype html><html lang="it"><head><meta charset="utf-8"><title>${esc(documentTitle)}</title><style>
+  @page {size:${landscape?'A4 portrait':'100mm 150mm'};margin:${landscape?'12mm':'0'};}
+  *{box-sizing:border-box}body{font-family:Arial,Helvetica,sans-serif;color:#142633;margin:0;background:#fff}.sheet{break-after:page;page-break-after:always;padding:${landscape?'3mm':'8mm'};max-width:${landscape?'190mm':'100mm'};height:${landscape?'auto':'150mm'};overflow:hidden}.sheet:last-child{break-after:auto}.sheet-header{display:flex;align-items:center;justify-content:space-between;border-bottom:2px solid #142633;padding-bottom:12px;margin-bottom:17px}.brand{font-weight:900;font-size:16pt}.brand small{font-size:7pt;font-weight:400;display:block;letter-spacing:2px;margin-top:5px}.date{font-size:8pt;color:#70808a}.big{font-size:31pt;font-weight:900;letter-spacing:-1px}.section{margin:15px 0 7px;font-weight:800;text-transform:uppercase;font-size:10pt}.small{font-size:8pt;color:#62717a;line-height:1.5}.line{border-bottom:1px solid #ddd;padding:8px 0;font-size:10pt;display:flex;justify-content:space-between;gap:12px}.line strong{font-size:11pt}.label-qty{font-weight:900;font-size:38pt;margin:15mm 0 12mm}.label-name{font-weight:800;font-size:16pt;line-height:1.3;margin-top:12mm;max-width:85mm}.label-info{font-size:11pt;margin-top:8mm}.label-sku{font-family:monospace;font-weight:800;font-size:14pt}.label-mark{font-size:10pt;font-weight:700;letter-spacing:2px;padding:12px 0;border-bottom:2px solid #000}.barcode{margin-top:10mm}.bartext{font-size:10pt;text-align:center;font-weight:900;margin-top:3mm}.table{border-collapse:collapse;width:100%;font-size:9pt}.table th,.table td{border-bottom:1px solid #ddd;padding:6px;text-align:left}.table th{background:#f2f4f5;text-transform:uppercase;font-size:8pt}.zone{margin-top:20px}.zone h2{font-size:13pt;background:#ecf5ef;padding:9px;margin:0 0 5px}.box-part{font-size:18pt;font-weight:800;margin-top:9px}.flags{margin-top:18px;color:#a04d42;font-size:9pt}@media screen{body{background:#e9edef;padding:20px}.sheet{margin:0 auto 20px;background:white;box-shadow:0 2px 9px #aaa;min-height:${landscape?'270mm':'150mm'}}}
+  </style></head><body>${pages.join('')}<script>window.addEventListener('load',()=>setTimeout(()=>window.print(),220))<\/script></body></html>`);
+  pop.document.close();
+}
+function printPickingA4(){const p=plan();if(!p.picks.length)return;
+  const blocks=groupsByCategory(p.picks).map(g=>`<section class="zone"><h2>${esc(g.name)} · ${g.qty} pezzi</h2><table class="table"><thead><tr><th>Zona</th><th>SKU</th><th>Articolo</th><th>Pezzi</th><th>OK</th></tr></thead><tbody>${g.rows.map(r=>`<tr><td>${esc(r.location)}</td><td>${esc(r.sku)}</td><td>${esc(r.name)}</td><td style="font-weight:900;font-size:13pt">${r.quantity}</td><td>☐</td></tr>`).join('')}</tbody></table></section>`).join('');
+  printHtml('LiberaPack - Picking '+dateLabel(),[`<div class="sheet"><div class="sheet-header"><div class="brand">LiberaPack<small>LA PORTA DEI SAPORI · PICKING</small></div><div class="date">${dateLabel()}</div></div><div class="big">${p.units} pezzi · ${p.orders} ordini</div><p class="small">Un solo passaggio per settore. Stampato dalla lista aggregata dei prodotti selezionati.</p>${blocks}<p class="flags">${p.blocked?'ATTENZIONE: '+p.blocked+' ordini con configurazione imballo incompleta.':''}</p></div>`],'a4');
+}
+function printPickLabels(){const rows=plan().picks;if(!rows.length)return;
+  printHtml('LiberaPack - Etichette Picking',rows.map(r=>`<div class="sheet"><div class="label-mark">LIBERAPACK / PICKING</div><div class="small" style="margin-top:5mm">${dateLabel()} · ${esc(r.category)}</div><div class="label-name">${esc(r.name)}</div><p class="label-sku">${esc(r.sku)}</p><div class="label-info">Zona: <strong>${esc(r.location)}</strong></div><div class="label-qty">× ${r.quantity}</div><div class="barcode">${barcode39(r.sku)}</div><div class="bartext">${esc(r.sku)}</div></div>`),'labels');
+}
+function printPacking(){const p=plan();if(!p.packages || p.blocked)return;
+  const labels=[];for(const order of p.packed)for(const b of order.packages){labels.push(`<div class="sheet"><div class="label-mark">LIBERAPACK / COLLO</div><div class="small" style="margin-top:6mm">LA PORTA DEI SAPORI</div><div class="big" style="margin-top:12mm">${esc(order.orderName)}</div><div class="box-part">COLLO ${b.index} / ${order.packages.length}</div><div class="small" style="margin:8mm 0 6mm">Ingombro: ${b.used} / 6 sesti</div><div class="section">Contenuto</div>${b.items.map(i=>`<div class="line"><span>${esc(i.sku)} · ${esc(i.name)}</span><strong>×${i.quantity}</strong></div>`).join('')}<div class="barcode">${barcode39(order.orderName.replace('#','')+'-'+b.index)}</div><div class="bartext">${esc(order.orderName)}-${b.index}</div></div>`);}printHtml('LiberaPack - Colli',labels,'labels');
+}
+function simulateOrder(){const id=$('demo-product')?.value,p=state.products.find(x=>x.id===id);const qty=Number($('demo-qty')?.value);if(!p){toast('Seleziona un prodotto.',true);return;}
+  if(!Number.isInteger(qty)||qty<1||qty>200){toast('Quantità tra 1 e 200.',true);return;}
+  const n=1055+state.orders.filter(x=>x.id.startsWith('sim-')).length;
+  const orderId=`sim-${Date.now()}`;const order={id:orderId,name:'#'+n,createdAt:new Date().toISOString(),cancelledAt:null,financialStatus:'PAID',fulfillmentStatus:'UNFULFILLED',lineItems:[{id:'line-'+orderId,sku:p.sku,variantId:p.id,title:p.name,quantity:qty,unfulfilledQuantity:qty}]};
+  state.orders.unshift(order);state.selected.add(orderId);demoSave();toast('Ordine demo '+order.name+' creato.');goto('orders');
+}
+function resetDemo(){if(!confirm('Ripristinare catalogo, ordini ed etichette demo?'))return;
+  clearDemoStore('liberapack-demo-products-v2');clearDemoStore('liberapack-demo-orders-v2');state.initialized=false;state.checkedPicks.clear();reload();toast('Demo ripristinata.');
+}
+function handleAction(name){const p=plan();switch(name){
+  case 'refresh':reload();break;
+  case 'open-picking':goto('picking');break;case 'open-orders':goto('orders');break;
+  case 'add-product':openProductDialog();break;
+  case 'print-picking':printPickingA4();break;case 'print-pick-labels':printPickLabels();break;case 'print-packing':printPacking();break;
+  case 'export-csv':download('liberapack_picking_'+localDate(new Date())+'.csv',csvRows(p.picks),'text/csv;charset=utf-8');break;
+  case 'export-zpl-pick':download('liberapack_pick_'+localDate(new Date())+'.zpl',zplPicking(p.picks,dateLabel()));break;
+  case 'export-zpl-pack':if(!p.blocked)download('liberapack_colli_'+localDate(new Date())+'.zpl',zplPacking(p));break;
+  case 'simulate-order':simulateOrder();break;case 'reset-demo':resetDemo();break;
+}}
+
+document.addEventListener('click',e=>{
+  const nav=e.target.closest('[data-nav]');if(nav){goto(nav.dataset.nav);return;}
+  const action=e.target.closest('[data-action]');if(action){handleAction(action.dataset.action);return;}
+  const edit=e.target.closest('[data-edit]');if(edit){openProductDialog(edit.dataset.edit);return;}
+  const toggle=e.target.closest('[data-toggle]');if(toggle){quickToggle(toggle.dataset.toggle);return;}
+  const close=e.target.closest('[data-close-dialog]');if(close){$('product-dialog').close();return;}
+});
+document.addEventListener('change',e=>{
+  const t=e.target;
+  if(t.id==='date-filter'){state.dateFilter=t.value;render();return;}
+  if(t.id==='select-all'){for(const o of visibleOrders()) t.checked?state.selected.add(o.id):state.selected.delete(o.id);render();return;}
+  if(t.dataset.order){t.checked?state.selected.add(t.dataset.order):state.selected.delete(t.dataset.order);render();return;}
+  if(t.dataset.pick){t.checked?state.checkedPicks.add(t.dataset.pick):state.checkedPicks.delete(t.dataset.pick);return;}
+});
+document.addEventListener('input',e=>{
+  if(e.target.id==='order-search'){const pos=e.target.selectionStart;state.orderQuery=e.target.value;render();const input=$('order-search');input?.focus();input?.setSelectionRange(pos,pos);}
+  if(e.target.id==='product-search'){const pos=e.target.selectionStart;state.productQuery=e.target.value;render();const input=$('product-search');input?.focus();input?.setSelectionRange(pos,pos);}
+});
+$('refresh-data').addEventListener('click',reload);
+$('product-form').addEventListener('submit',saveProduct);
+$('product-dialog').addEventListener('click',e=>{if(e.target===$('product-dialog'))$('product-dialog').close();});
+reload();
+
+</script>
+</head>
+<body>
+  <div class="shell">
+    <aside class="sidebar">
+      <div class="brand">
+        <span class="brand-icon"><svg width="27" height="27" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="m3 7 9-4 9 4v10l-9 4-9-4V7Z"/><path d="m3 7 9 4 9-4m-9 4v10M8 5l9 4"/></svg></span>
+        <span><strong>LiberaPack</strong><small>SMART WAREHOUSE</small></span>
+      </div>
+      <div class="store-block"><span class="store-avatar">LP</span><span><strong>La Porta dei Sapori</strong><small id="store-context">Ambiente demo</small></span></div>
+      <div class="nav-title">OPERAZIONI</div>
+      <nav aria-label="Navigazione principale" class="menu">
+        <button data-nav="dashboard" class="nav-button is-active"><span class="nav-icon">◫</span> Panoramica</button>
+        <button data-nav="orders" class="nav-button"><span class="nav-icon">▤</span> Ordini Shopify <span id="nav-orders" class="nav-count">0</span></button>
+        <button data-nav="picking" class="nav-button"><span class="nav-icon">≡</span> Prelievo per zona</button>        <button data-nav="packing" class="nav-button"><span class="nav-icon">▣</span> Composizione colli</button>
+      </nav>
+      <div class="nav-title nav-title-second">GESTIONE</div>
+      <nav aria-label="Gestione" class="menu">
+        <button data-nav="catalog" class="nav-button"><span class="nav-icon">◈</span> Catalogo prodotti</button>
+        <button data-nav="settings" class="nav-button"><span class="nav-icon">⚙</span> Impostazioni</button>
+      </nav>
+      <div class="sidebar-spacer"></div>
+      <div class="side-note"><span class="side-note-icon">✳</span><div>Dal singolo ordine al magazzino organizzato.<small>Picking aggregato e imballi automatici.</small></div></div>
+      <div class="side-foot">LIBERAPACK <span>V1.0 · HACKATHON</span></div>
+    </aside>
+    <div class="workspace">
+      <header class="topbar">
+        <div class="breadcrumb">OPERATIONS <span>/</span> <b id="top-breadcrumb">Panoramica</b></div>
+        <div class="top-actions"><span id="sync-label" class="sync-label">Demo pronta</span><button id="refresh-data" class="btn btn-outline btn-sm">↻ &nbsp;Aggiorna dati</button><span id="mode-pill" class="mode-pill">DEMO</span></div>
+      </header>
+      <div class="page-container"><div id="app-banner"></div><main id="view" tabindex="-1"></main></div>
+    </div>
+  </div>
+  <dialog id="product-dialog" class="dialog">
+    <form id="product-form" class="product-form" novalidate>
+      <div class="modal-top"><div><div class="eyebrow">CATALOGO · PRODOTTI</div><h2 id="modal-title">Nuovo prodotto</h2></div><button type="button" class="modal-close" data-close-dialog aria-label="Chiudi">×</button></div>
+      <div id="modal-warning" class="modal-warning" hidden></div>
+      <div class="form-grid">
+        <label class="field">Codice / SKU <input type="text" name="sku" autocomplete="off" maxlength="64" required placeholder="OL-EVO-500" /></label>
+        <label class="field">Nome prodotto <input type="text" name="name" maxlength="130" required placeholder="Olio extravergine 500 ml" /></label>
+        <label class="field">Categoria <select name="category"><option>Olio</option><option>Vino</option><option>Pasta</option><option>Conserve</option><option>Dolci</option><option>Altri</option></select></label>
+        <label class="field">Zona / scaffale <input type="text" name="location" maxlength="90" placeholder="A01 · Olio" /></label>
+        <label class="field">Ingombro (sesti di collo) <select name="spaceSixths" required><option value="1">1/6 di collo</option><option value="2">2/6 di collo</option><option value="3">3/6 di collo</option><option value="4">4/6 di collo</option><option value="5">5/6 di collo</option><option value="6">6/6 — collo intero</option></select></label>
+        <label class="field">Prezzo Shopify (€) <input type="number" name="price" min="0" step="0.01" required placeholder="0.00" /></label>
+        <label class="field">Peso (grammi) · facoltativo <input type="number" name="weightGrams" min="0" step="1" placeholder="es. 800" /></label>
+        <label class="field">Volume (cm³) · facoltativo <input type="number" name="volumeCm3" min="0" step="1" placeholder="es. 900" /></label>
+      </div>
+      <label class="toggle-line"><input name="active" type="checkbox" checked /><span><strong>Attivo per il magazzino</strong><small>Se disattivato, non verrà assegnato automaticamente ai colli.</small></span></label>
+      <div id="modal-errors" role="alert" class="modal-errors" hidden></div>
+      <div class="modal-footer"><button type="button" class="btn btn-outline" data-close-dialog>Annulla</button><button type="submit" id="product-submit" class="btn btn-primary">Salva prodotto</button></div>
+    </form>
+  </dialog>
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+</body>
+</html>
