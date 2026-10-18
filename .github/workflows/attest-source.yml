@@ -1,0 +1,68 @@
+name: Signed source provenance
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  provenance:
+    name: Package and attest source
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      id-token: write
+      attestations: write
+    steps:
+      - name: Check out exact commit
+        uses: actions/checkout@v4
+
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+
+      - name: Verify deterministic engine
+        run: |
+          npm run check
+          npm test
+
+      - name: Create commit-specific source archive
+        shell: bash
+        run: |
+          set -euo pipefail
+          name="liberapack-source-${GITHUB_SHA}.tar.gz"
+          git archive --format=tar --prefix=liberapack/ HEAD | gzip -n > "${name}"
+          sha256sum "${name}" > SHA256SUMS
+          cat SHA256SUMS
+
+      - name: Publish cryptographic build provenance
+        id: provenance
+        uses: actions/attest@v4
+        with:
+          subject-path: liberapack-source-*.tar.gz
+
+      - name: Upload backup source archive
+        uses: actions/upload-artifact@v4
+        with:
+          name: liberapack-source-${{ github.sha }}
+          path: |
+            liberapack-source-*.tar.gz
+            SHA256SUMS
+          if-no-files-found: error
+          retention-days: 90
+
+      - name: Record attestation in run summary
+        env:
+          ATTESTATION_URL: ${{ steps.provenance.outputs.attestation-url }}
+        run: |
+          {
+            echo '### LiberaPack source provenance'
+            echo "Commit: ${GITHUB_SHA}"
+            echo "Attestation: ${ATTESTATION_URL}"
+            echo 'Source archive and SHA256SUMS are available in the workflow artifacts.'
+            echo 'This proves workflow/source integrity, not exclusive copyright authorship.'
+          } >> "${GITHUB_STEP_SUMMARY}"
