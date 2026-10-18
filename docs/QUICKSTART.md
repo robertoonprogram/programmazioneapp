@@ -43,6 +43,19 @@ curl -s http://127.0.0.1:4173/api/picking \
 
 The server binds to `127.0.0.1` by default. It has **no authentication or permanent storage**, so do not put it on the public Internet without replacing its demo-only security architecture.
 
+## Run as a Docker container
+
+```bash
+docker build -t liberapack .
+docker run --rm -p 4173:4173 liberapack
+```
+
+Open `http://127.0.0.1:4173`. The container serves demo data only and requires an authentication layer before any public deployment.
+
+## Optional Larry chat connection
+
+After obtaining real application ID, agent ID and a key in your own Evolus event workspace, set the `EVOLUS_*` variables shown in `.env.example` **in your local environment**. Execute `node examples/explain-with-larry.mjs` to smoke-test an anonymized sample plan. The default `npm test` suite uses a mocked transport and does not call Evolus.
+
 ## Test commands
 
 ```bash
