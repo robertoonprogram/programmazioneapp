@@ -1,0 +1,16 @@
+{
+  "name": "liberapack-reference",
+  "private": true,
+  "version": "0.1.0",
+  "description": "LiberaPack reference logic and demos (synthetic data only)",
+  "type": "module",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "test": "node --test",
+    "demo": "node examples/run-demo.mjs",
+    "start": "node server.mjs",
+    "check": "node --check src/warehouse.mjs && node --check server.mjs && node --check examples/sample-data.mjs && node --check examples/run-demo.mjs"
+  }
+}
