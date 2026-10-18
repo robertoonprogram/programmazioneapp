@@ -55,6 +55,19 @@ Validated summary -> Larry (Evolus) -> Explanation / human review
 
 Shopify is an intended commerce connector, not a requirement for running the offline demo. The Evolus/AMD agent runtime is maintained outside this repository; no live external connection is claimed by the sample server.
 
+## Optional Evolus agent chat
+
+A server-side [Larry integration adapter](src/evolus-client.mjs) is included. It uses Evolus's documented OpenAI-compatible agent-chat endpoint and requires `EVOLUS_API_KEY`, `EVOLUS_APPLICATION_ID` and `EVOLUS_AGENT_ID`. It sends only a deliberately minimized parcel summary. To try it **after** configuring the authorized workspace, run `node examples/explain-with-larry.mjs`. Automated tests use a mock transport; a real call is not claimed.
+
+## Docker demo
+
+```bash
+docker build -t liberapack .
+docker run --rm -p 4173:4173 liberapack
+```
+
+Open `http://127.0.0.1:4173`. This is a **demo container without production authentication** and uses synthetic data only. See [Quickstart](docs/QUICKSTART.md).
+
 ## Documentation
 
 - [System architecture](docs/ARCHITECTURE.md)
