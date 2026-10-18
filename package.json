@@ -11,6 +11,6 @@
     "test": "node --test",
     "demo": "node examples/run-demo.mjs",
     "start": "node server.mjs",
-    "check": "node --check src/warehouse.mjs && node --check server.mjs && node --check examples/sample-data.mjs && node --check examples/run-demo.mjs"
+    "check": "node --check src/warehouse.mjs && node --check src/evolus-client.mjs && node --check server.mjs && node --check examples/sample-data.mjs && node --check examples/run-demo.mjs && node --check examples/explain-with-larry.mjs"
   }
 }
