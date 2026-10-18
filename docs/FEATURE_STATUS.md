@@ -4,13 +4,13 @@ This file distinguishes code available in this repository from external systems 
 
 | Area | Included in GitHub | Scope / caveat |
 | --- | --- | --- |
-| Offline interactive UI | Yes: \`index.html\` | Browser-only demo, sample records |
-| Shopify-styled UI | Yes: \`shopify-demo.html\` | Demo; real store integration unverified |
+| Offline interactive UI | Yes: `index.html` | Browser-only demo, sample records |
+| Shopify-styled UI | Yes: `shopify-demo.html` | Demo; real store integration unverified |
 | Product information | Yes, in sample data and demos | SKU, category, zone, weight, relative space |
 | Box formats | Yes, in sample data and demos | Capacity in sixths, tare and packaging mass |
 | Order processing | Yes, in sample data and demos | Four synthetic sample orders |
-| Deterministic pack assignment | Yes: \`src/warehouse.mjs\` | Best-fit decreasing heuristic, not 3D geometry |
-| Aggregate picking | Yes: \`buildPickingList()\` | Combines quantities by SKU and zone |
+| Deterministic pack assignment | Yes: `src/warehouse.mjs` | Best-fit decreasing heuristic, not 3D geometry |
+| Aggregate picking | Yes: `buildPickingList()` | Combines quantities by SKU and zone |
 | Unit and weight guards | Yes, tested | Default gross limit 25 kg per package |
 | Automated tests | Yes, GitHub Actions | Functional tests on the reference engine |
 | Larry AI | Described only | Export agent config from authorized Evolus workspace |
