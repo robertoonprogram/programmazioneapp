@@ -13,7 +13,7 @@ This file distinguishes code available in this repository from external systems 
 | Aggregate picking | Yes: `buildPickingList()` | Combines quantities by SKU and zone |
 | Unit and weight guards | Yes, tested | Default gross limit 25 kg per package |
 | Automated tests | Yes, GitHub Actions | Functional tests on the reference engine |
-| Larry AI | Described only | Export agent config from authorized Evolus workspace |
+| Larry AI chat | Server-side adapter included, mock-tested | Live credentials and authorized workspace still required |
 | Evolus workflows and knowledge | Blueprint only | Export and verify active workflow |
 | AMD open model runtime | Documentation only | Provide runtime evidence from workspace |
 | Shopify Admin integration | Planned | Source ZIP and installation checks pending |
