@@ -4,7 +4,7 @@
 
 **https://github.com/robertoonprogram/programmazioneapp**
 
-The repository is the source reference for the LiberaPack demonstration, reference calculation engine, tests and documentation. It does **not** currently include a complete export of the externally hosted Evolus workspace.
+The repository has a Dockerfile, a runnable localhost demo, tests and an optional Evolus chat adapter. The repository is the source reference for the LiberaPack demonstration, reference calculation engine, tests and documentation. It does **not** currently include a complete export of the externally hosted Evolus workspace.
 
 ## Suggested walkthrough
 
@@ -18,7 +18,7 @@ The repository is the source reference for the LiberaPack demonstration, referen
 
 ## Evidence to attach when available
 
-- Public repository link (above).
+- Public repository link (above), plus reproducible container build (`docker build -t liberapack .`).
 - Executable demonstration or screen recording.
 - UI screenshots of order flow and calculated output.
 - Exported Evolus agent/workflow design and execution evidence.
