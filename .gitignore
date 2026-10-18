@@ -1,0 +1,35 @@
+# Local configuration and secrets
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.p12
+*.pfx
+credentials.*
+secrets.*
+shopify-token*
+**/.shopify/
+**/.vercel/
+
+# Local databases and real operational data
+*.sqlite
+*.sqlite3
+*.db
+data/private/
+exports/private/
+customer-data/
+sessions/
+
+# Dependencies, logs and caches
+node_modules/
+npm-debug.log*
+*.log
+.DS_Store
+dist/
+build/
+coverage/
+.cache/
+.venv/
+__pycache__/
+*.pyc
