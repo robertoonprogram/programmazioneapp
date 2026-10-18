@@ -1,0 +1,16 @@
+node_modules
+.git
+.github
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.sqlite
+*.sqlite3
+*.db
+coverage
+data
+exports
+private
+.DS_Store
