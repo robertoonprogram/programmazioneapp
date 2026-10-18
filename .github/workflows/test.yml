@@ -19,3 +19,5 @@ jobs:
         run: npm test
       - name: Run sample
         run: npm run demo > /dev/null
+      - name: Build containerized demo
+        run: docker build -t liberapack .
