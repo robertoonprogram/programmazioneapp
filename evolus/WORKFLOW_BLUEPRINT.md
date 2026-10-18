@@ -8,7 +8,7 @@ An operator requests an explanation for an existing deterministic packing propos
 
 ## Example input contract
 
-\`\`\`json
+```json
 {
   "batch_id": "DEMO-2026-10-18",
   "mode": "explain",
@@ -19,7 +19,7 @@ An operator requests an explanation for an existing deterministic packing propos
   },
   "warnings": []
 }
-\`\`\`
+```
 
 The values above are illustrative, not a real external call.
 
@@ -35,7 +35,7 @@ The values above are illustrative, not a real external call.
 
 ## Expected output contract
 
-\`\`\`json
+```json
 {
   "batch_id": "DEMO-2026-10-18",
   "summary": "Explanation from the agent, subject to operator review",
@@ -43,7 +43,7 @@ The values above are illustrative, not a real external call.
   "proposed_rules": [],
   "requires_review": false
 }
-\`\`\`
+```
 
 ## Safety requirements
 
