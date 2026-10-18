@@ -1,47 +1,75 @@
 # LiberaPack
 
-**Intelligent packing and warehouse operations for e-commerce.**
+**Smart packing, order preparation and warehouse operations for e-commerce.**
 
-LiberaPack helps businesses prepare orders, manage products and packaging formats, consolidate warehouse picking, and select suitable boxes. The project was developed for the October 2026 hackathon in Imperia.
+![Node tests](https://github.com/robertoonprogram/programmazioneapp/actions/workflows/test.yml/badge.svg)
 
-## Explore the prototype
+LiberaPack is a software prototype developed for the October 2026 hackathon in Imperia. It helps a warehouse team organize product information, choose suitable packaging and prepare consolidated picking lists. Its AI assistant, **Larry**, is designed to work with Evolus to explain packing proposals and surface anomalies for human review.
 
-- **[Open the offline demo](./index.html)** — standalone browser prototype with editable products, box formats and sample orders.
-- **[Open the Shopify-oriented demo](./shopify-demo.html)** — interface for order management, product catalog, aggregated picking, box assignment and label generation. Demo mode uses sample data.
+![System architecture](docs/architecture.svg)
 
-Download the repository and open `index.html` in a modern browser. The offline demo does not require an account, credentials, or a server.
+## Live code in this repository
 
-## Core modules
+The repository contains **two independent interactive browser demos** and a **reproducible deterministic calculation API**.
 
-| Module | Description |
-| --- | --- |
-| Orders | Review and process orders, with a demonstration dataset. |
-| Products | Maintain a configurable product catalog, including SKU and packaging requirements. |
-| Boxes | Manage available box formats and calculate packing proposals. |
-| Warehouse | Aggregate quantities by product and zone to streamline picking. |
-| Larry / AI workflows | An agent-driven assistance layer developed in the Evolus workspace for warehouse operations. |
+| Component | Entry point | What it demonstrates |
+| --- | --- | --- |
+| Offline warehouse interface | [index.html](index.html) | Editable demo products, boxes, orders and sample workflow |
+| Shopify-oriented interface | [shopify-demo.html](shopify-demo.html) | E-commerce warehouse dashboard and product/packing interactions |
+| Packing and picking engine | [src/warehouse.mjs](src/warehouse.mjs) | Tested, deterministic sixths-based parcel assignment and aggregated picking |
+| Local HTTP server | [server.mjs](server.mjs) | Sample JSON API and browser demo hosting |
+| Larry / Evolus | [docs/EVOLUS.md](docs/EVOLUS.md) | Architecture and workflow export requirements; external workspace not yet imported |
 
-## Approach
+## Three main sections
 
-The packing calculation and warehouse quantities should remain deterministic and verifiable. AI is used for explanation, workflow orchestration, anomaly detection and operational assistance, not to silently alter the packing constraints.
+- **Orders:** view orders, quantities and preparation flow.
+- **Products:** manage SKU information, categories, warehouse picking zones, relative sizes and weights.
+- **Boxes:** define available packaging and evaluate suitable parcel assignments.
 
-The broader architecture is designed for integrations with Shopify and other commerce platforms. Its live connectivity and agent deployment depend on the individual environments and credentials.
+The reference core uses a **best-fit-decreasing heuristic**, relative capacity in sixths, and a strict **25 kg gross-weight cap per parcel**, including packaging weight. It reconciles ordered and packaged quantities. This **does not** establish 3D geometric packability or a mathematically optimal arrangement.
 
-## Repository contents
+## Quick start
 
-- `index.html` — self-contained offline demonstrator.
-- `shopify-demo.html` — Shopify-oriented front-end demonstration.
-- `docs/SHOPIFY.md` — integration approach, setup and limitations.
-- `docs/EVOLUS.md` — Evolus/AMD architecture and export checklist.
-- `docs/PROJECT_SCOPE.md` — scope, operating flow and validation notes.
-- `.gitignore` — excludes sensitive and generated files.
+Install **Node.js 20+**, then:
 
-## Current status
+```bash
+git clone https://github.com/robertoonprogram/programmazioneapp.git
+cd programmazioneapp
+npm test
+npm run demo
+npm start
+```
 
-This repository contains the **retrievable demo sources and technical documentation**, not a verified export of the entire Evolus workspace or all historical development archives. The Evolus agents, knowledge base, workflows, and any separate backend must be exported and added when available.
+Open **http://127.0.0.1:4173** for the interactive offline interface and **http://127.0.0.1:4173/shopify-demo.html** for the second demo. Without Node, download the repository and open `index.html` directly in your browser.
 
-The Shopify-enabled app is **not represented as production-installed or live-verified**. Features demonstrated using sample data must not be mistaken for processing of real orders.
+The local server also exposes `GET /api/health`, `GET /api/sample`, `POST /api/pack` and `POST /api/picking`. See the [Quickstart](docs/QUICKSTART.md).
 
-## Safety and licensing
+## Architecture and integrations
 
-Use sample records only until the relevant shop owner has authorized integration. Keep API tokens, app secrets, credentials, customer data and local databases outside version control. The historical Delphi/OS1 code and any third-party proprietary material should not be published without authorization.
+```text
+Sales channel -> Orders
+Product/box catalog -> Deterministic packing core
+Packing core -> Parcels + aggregated picking
+Validated summary -> Larry (Evolus) -> Explanation / human review
+```
+
+Shopify is an intended commerce connector, not a requirement for running the offline demo. The Evolus/AMD agent runtime is maintained outside this repository; no live external connection is claimed by the sample server.
+
+## Documentation
+
+- [System architecture](docs/ARCHITECTURE.md)
+- [Start locally and use the API](docs/QUICKSTART.md)
+- [Feature evidence and limitations](docs/FEATURE_STATUS.md)
+- [Larry and Evolus](docs/EVOLUS.md)
+- [Evolus workflow blueprint](evolus/WORKFLOW_BLUEPRINT.md)
+- [Shopify connection guide](docs/SHOPIFY.md)
+- [Hackathon submission checklist](docs/HACKATHON_SUBMISSION.md)
+- [Short English demonstration script](docs/PRESENTATION_SCRIPT.md)
+- [Roadmap](docs/ROADMAP.md)
+- [Security and handling of secrets](SECURITY.md)
+
+## Validation
+
+Run `npm run check`, `npm test` and `npm run demo`. Automated CI runs the same checks on GitHub Actions. All fixture orders, products and boxes are synthetic.
+
+**Important scope:** the complete Evolus workspace, original Shopify app source ZIP and previous historical OS1-related archives have not yet been imported here. This repository does not claim production Shopify synchronization, physical printer connectivity, confirmed AMD hosting or validated 3D geometry. Proprietary third-party code and customer information must not be committed without authorization.
