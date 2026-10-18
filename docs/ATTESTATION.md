@@ -13,6 +13,20 @@ The GitHub Actions workflow [Signed source provenance](../.github/workflows/atte
 
 The public attestation can be checked against the archive's hash and the GitHub repository/workflow identity. GitHub uses a public transparency log for attestations produced from public repositories.
 
+## First verified source record
+
+A source-provenance workflow run completed successfully on **18 October 2026**:
+
+- [Successful workflow run](https://github.com/robertoonprogram/programmazioneapp/actions/runs/39124317313)
+- [GitHub attestation #57118347](https://github.com/robertoonprogram/programmazioneapp/attestations/57118347)
+- [Signed Sigstore transparency-log entry](https://search.sigstore.dev?logIndex=3310533139)
+- Repository revision: `440e4d2a126727a72c5f5a04083dc88ffa0ece78`
+- Source tarball: `liberapack-source-440e4d2a126727a72c5f5a04083dc88ffa0ece78.tar.gz`
+- Source tarball SHA-256: `c822f1e68dd2f483110b26066c96a306ea7f9e2b1209eb6318cfeb0c36953d67`
+- Archive artifact was uploaded to GitHub Actions with **90-day retention**. Save an independent personal copy before expiration.
+
+This signed record establishes verifiable provenance of the archived source from the reported GitHub workflow, **not exclusive copyright ownership**.
+
 ## Find an attestation
 
 Open [GitHub Actions — Signed source provenance](https://github.com/robertoonprogram/programmazioneapp/actions/workflows/attest-source.yml) and select a **successful** run.
