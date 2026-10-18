@@ -1,0 +1,151 @@
+{
+  "schema": "liberapack-provenance-snapshot/1",
+  "repository": "https://github.com/robertoonprogram/programmazioneapp",
+  "snapshot_commit": "e54672a0ceead4a3769f889bb9f113dbf14b9ea5",
+  "snapshot_git_commit_datetime_utc": "2026-10-18T11:14:07Z",
+  "branch_at_snapshot": "main",
+  "file_count": 28,
+  "note": "List of Git blobs and sizes as returned for the named historical commit. The manifest was created in a later commit. SHA-1 values are Git object identities, not a qualified timestamp, proof of independent creation, or a signature.",
+  "files": [
+    {
+      "path": ".dockerignore",
+      "git_blob_sha1": "d37958769eb4e2535f127fd17931232143d3c3e7",
+      "size_bytes": 128
+    },
+    {
+      "path": ".env.example",
+      "git_blob_sha1": "e2fe957493e1958db9232626a6b74fb8c338426c",
+      "size_bytes": 438
+    },
+    {
+      "path": ".github/workflows/test.yml",
+      "git_blob_sha1": "c17fa8ab2fa07d82ca38d16c3c15d11050e8167c",
+      "size_bytes": 515
+    },
+    {
+      "path": ".gitignore",
+      "git_blob_sha1": "4d0b8a62ad70199d488f8b857238d36e665a0766",
+      "size_bytes": 408
+    },
+    {
+      "path": "Dockerfile",
+      "git_blob_sha1": "a07fa5fc7e8e829fa19bdbcac81c4d0549452732",
+      "size_bytes": 218
+    },
+    {
+      "path": "docs/ARCHITECTURE.md",
+      "git_blob_sha1": "966b801fdf90709558a670d202bc1b80776617b9",
+      "size_bytes": 2387
+    },
+    {
+      "path": "docs/architecture.svg",
+      "git_blob_sha1": "7efe7d8b499823f16f91994cbb851ff1940982bc",
+      "size_bytes": 2952
+    },
+    {
+      "path": "docs/EVOLUS.md",
+      "git_blob_sha1": "70d900def0a1709f21752d7d04246016d3e13952",
+      "size_bytes": 3606
+    },
+    {
+      "path": "docs/FEATURE_STATUS.md",
+      "git_blob_sha1": "e12d80aa1be4731d3961b5315a107a7c627a2913",
+      "size_bytes": 2147
+    },
+    {
+      "path": "docs/HACKATHON_SUBMISSION.md",
+      "git_blob_sha1": "e178f6d42e368b5d7cff1e61c005bc9d719b11d2",
+      "size_bytes": 2316
+    },
+    {
+      "path": "docs/PRESENTATION_SCRIPT.md",
+      "git_blob_sha1": "48ae9b5456b34d48db72956b50cbce142ed570b7",
+      "size_bytes": 1204
+    },
+    {
+      "path": "docs/QUICKSTART.md",
+      "git_blob_sha1": "877199d0fd61491867dcb4d00e053722a0dce8f8",
+      "size_bytes": 2505
+    },
+    {
+      "path": "docs/ROADMAP.md",
+      "git_blob_sha1": "f2c9a09ac81b5d956cb48d008bd5826c2cdbc292",
+      "size_bytes": 1434
+    },
+    {
+      "path": "docs/SHOPIFY.md",
+      "git_blob_sha1": "6fdb2831b6ac4b98b06a380eb5d2aece28c5d71f",
+      "size_bytes": 2000
+    },
+    {
+      "path": "evolus/WORKFLOW_BLUEPRINT.md",
+      "git_blob_sha1": "6cac4d44beec62d050a7f9bc27fb3f84fdbe0bb8",
+      "size_bytes": 2053
+    },
+    {
+      "path": "examples/explain-with-larry.mjs",
+      "git_blob_sha1": "df5acdeb64efdaa0ef5cd9107ce8380721d82741",
+      "size_bytes": 690
+    },
+    {
+      "path": "examples/run-demo.mjs",
+      "git_blob_sha1": "003e144775b4e322786cff7e7f8b070592c4c406",
+      "size_bytes": 468
+    },
+    {
+      "path": "examples/sample-data.mjs",
+      "git_blob_sha1": "ef496c05e09a251a557ae98f306323b37dcbba14",
+      "size_bytes": 1317
+    },
+    {
+      "path": "index.html",
+      "git_blob_sha1": "907afe3168769c2ab7ae179612d741a44e8fb1e4",
+      "size_bytes": 47449
+    },
+    {
+      "path": "package.json",
+      "git_blob_sha1": "c60a074989bfe864201f03537332ac4e8b34c4bf",
+      "size_bytes": 575
+    },
+    {
+      "path": "README.md",
+      "git_blob_sha1": "1710a05b257be2a1d6270994bc160a9f84e34236",
+      "size_bytes": 4907
+    },
+    {
+      "path": "SECURITY.md",
+      "git_blob_sha1": "a4294c09a51e6983490137e346e37d2985932f64",
+      "size_bytes": 1237
+    },
+    {
+      "path": "server.mjs",
+      "git_blob_sha1": "38f6614d292e198adeed64517ac909436c861847",
+      "size_bytes": 3242
+    },
+    {
+      "path": "shopify-demo.html",
+      "git_blob_sha1": "59f2c9edcad5c5f0e53bfef47a317b556a221f49",
+      "size_bytes": 78412
+    },
+    {
+      "path": "src/evolus-client.mjs",
+      "git_blob_sha1": "9b166247c56c5e079e248df03de625f9a498a187",
+      "size_bytes": 3985
+    },
+    {
+      "path": "src/warehouse.mjs",
+      "git_blob_sha1": "f41172d254fd754013b824ca22161b41a1478886",
+      "size_bytes": 8359
+    },
+    {
+      "path": "test/evolus-client.test.mjs",
+      "git_blob_sha1": "87d0fd927735aa6e88ceaece15b3fbc42a093805",
+      "size_bytes": 2397
+    },
+    {
+      "path": "test/warehouse.test.mjs",
+      "git_blob_sha1": "4285ab72c291f834d81ba007e915f6aa267ccba8",
+      "size_bytes": 3439
+    }
+  ]
+}
