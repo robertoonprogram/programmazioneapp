@@ -1,0 +1,21 @@
+name: Verify reference engine
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  node-tests:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Syntax checks
+        run: npm run check
+      - name: Packing and warehouse tests
+        run: npm test
+      - name: Run sample
+        run: npm run demo > /dev/null
